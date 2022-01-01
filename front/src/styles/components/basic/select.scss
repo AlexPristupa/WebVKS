@@ -1,0 +1,21 @@
+.el-select-dropdown {
+  min-height: 50px;
+}
+
+.el-select-dropdown__item {
+  text-align: left;
+
+  &:hover {
+    background-color: $font-color--active;
+    color: $font-color-white-full;
+  }
+
+  &.selected {
+    color: $font-color--active;
+
+    &:hover {
+      background-color: $font-color--active;
+      color: $font-color-white-full;
+    }
+  }
+}

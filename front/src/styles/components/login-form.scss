@@ -1,0 +1,149 @@
+.login-form {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $background-color__login inset !important;
+    -webkit-text-fill-color: $font-color__form-login !important;
+  }
+
+  background-color: $background-color__login;
+  padding: 3.2rem 3.2rem 1.8rem 3.2rem;
+  border-radius: 4px;
+  box-shadow: $box-shadow__login-form;
+
+  .el-select {
+    width: $width--default;
+    margin-bottom: 1.4rem;
+
+    .el-input {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .el-input__inner {
+      text-align: center;
+      padding: 0;
+      color: $border-color__login-page-select;
+      border-radius: $border-radius_4;
+      border: $border__form-login;
+      height: 2.4rem;
+      width: $width--default;
+
+      &:focus {
+        border: $border__form-login;
+      }
+
+      &:hover {
+        background-color: $background-color__login--hover;
+      }
+    }
+
+    .el-input.is-focus .el-input__inner {
+      border: $border__form-login;
+    }
+
+    .el-input__suffix {
+      display: none;
+    }
+
+    .el-select-dropdown {
+      margin: 0;
+    }
+
+    .el-select-dropdown__list {
+      padding: 0;
+    }
+
+    .el-select-dropdown__item {
+      display: flex;
+      align-items: center;
+      height: 2.4rem;
+      background-color: $background-color__login;
+      color: $font-color__form-login;
+      padding: 0;
+
+      &.selected {
+        font-weight: normal;
+        color: $font-color-white-primary;
+        background-color: $background-color__login--selected;
+      }
+
+      &:focus span,
+      &:hover span {
+        background-color: $background-color__login--hover;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        height: $height--default;
+        width: $width--default;
+      }
+    }
+
+    .popper__arrow {
+      display: none;
+    }
+  }
+
+  .el-form-item:active,
+  .el-form-item:focus,
+  .el-form-item:hover {
+    .el-input__inner {
+      background-color: transparent;
+    }
+  }
+
+  .el-form-item--small.el-form-item {
+    border-bottom: $border__form-login-input;
+    margin-bottom: 1.4rem;
+  }
+
+  .el-form-item {
+    &__error {
+      padding-top: 10px;
+    }
+    &__label {
+      color: $font-color-white-primary;
+
+      &::before {
+        display: none;
+      }
+    }
+    &.is-required:not(.is-no-asterisk) > .el-form-item__label:after {
+      content: "*";
+      font-size: 18px;
+      color: $font-color__mark--required;
+      margin-left: 4px;
+    }
+  }
+
+  .el-form-item__content {
+    margin-bottom: 4px;
+  }
+
+  .el-input__inner {
+    background-color: transparent;
+    color: $font-color__form-login;
+    border: none;
+    border-radius: 0;
+  }
+
+  .el-input__inner {
+    width: 12rem;
+    height: $height__input--large;
+
+    &::-ms-reveal {
+      display: none;
+    }
+  }
+
+  .el-button {
+    margin-top: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}

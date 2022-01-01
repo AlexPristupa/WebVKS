@@ -1,0 +1,99 @@
+@import "src/styles/variables/sizes";
+$width__settings-block: 150px;
+$width__settings-block--monthly__date-picker: 95px;
+$width__settings-block--monthly__input-number: 100px;
+$width__settings-block--monthly__select: 135px;
+$width__settings-block--weekly__title: 60px;
+
+.mp-modal--edit-booking-periodic {
+  .el-form {
+    display: flex;
+    &-item__content {
+      height: auto;
+    }
+  }
+
+  &__frequency {
+    width: 25%;
+  }
+
+  &__frequency-settings {
+    width: 75%;
+    border-left: $border $border-color__modal;
+    padding-left: $offset--medium;
+    .el-form-item__content, &--daily, &--weekly, &--monthly {
+      width: $width--default;
+    }
+    &--daily, &--weekly, &--monthly {
+      .el-radio-group {
+        width: $width--default;
+      }
+      & .settings-block {
+        display: flex;
+        justify-content: space-between;
+        padding-left: $offset--default;
+        .el-button + .el-button {
+          margin-left: $zero;
+        }
+        .mp-date-picker, .mp-select {
+          width: $width__settings-block;
+        }
+        &__date-picker {
+          display: flex;
+          span {
+            margin-right: $offset--mini;
+          }
+        }
+        .mp-button.included {
+          background-color: $color__active;
+          border: $border $color__medium;
+          color: $font-color-white-primary;
+        }
+        &--one-setting {
+          justify-content: flex-end;
+        }
+      }
+      .title {
+        text-align: left;
+      }
+    }
+
+    &--daily {
+      & .el-radio__label .el-input-number__text {
+        margin: $zero;
+      }
+    }
+    &--monthly {
+      .el-input-number {
+        width: $width__settings-block--monthly__input-number;
+      }
+      & .settings-block {
+        .mp-date-picker {
+          width: $width__settings-block--monthly__date-picker;
+        }
+        .mp-select {
+          width: $width__settings-block--monthly__select;
+        }
+      }
+    }
+
+    &--weekly {
+      .el-radio__input .el-radio__inner {
+        display: none;
+      }
+    }
+  }
+
+  .mp-radio {
+    display: flex;
+    align-items: center;
+    margin-right: $zero;
+    width: $width--default;
+    margin-bottom: $offset--default;
+    & .el-radio {
+      &__label {
+        width: $width--default;
+      }
+    }
+  }
+}

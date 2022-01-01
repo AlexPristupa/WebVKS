@@ -1,0 +1,42 @@
+.filtration-panel-filter-wrapper__body .column-filter__string {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+
+  .column-filter-string__value {
+    margin-right: $fp-filter__offcet;
+    height: $height__input--large;
+  }
+
+  .column-filter-string__item {
+    flex-basis: calc(50% - 0.8rem);
+    padding-top: $offset--mini;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+
+    &:nth-child(odd) {
+      padding-right: 0.8rem;
+    }
+
+    &:nth-child(even) {
+      padding-left: 0.8rem;
+    }
+
+    .mp-button {
+      width: 22px;
+      height: 22px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .mp-button--add {
+      background-image: url('../assets/icons/add-circle.svg');
+    }
+
+    .mp-button--remove {
+      background-image: url('../assets/icons/delete-circle.svg');
+    }
+
+  }
+}

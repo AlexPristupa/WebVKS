@@ -1,0 +1,123 @@
+$color__active: rgba(0, 136, 142, 1);
+$color__hover--black: rgba(0, 0, 0, 0.24);
+$color__alarm: #f56c6c;
+$color__dark: #00888e;
+$color__medium: #a5e5e8;
+$color__light: #e6f3f4;
+
+// Fonts
+$font-color-primary: rgba(0, 0, 0, 0.87);
+$font-color-medium: rgba(0, 0, 0, 0.72);
+$font-color-normal: rgba(0, 0, 0, 0.54);
+$font-color-low: rgba(0, 0, 0, 0.24);
+$font-color-white-primary: rgba(255, 255, 255, 0.87);
+$font-color-white-normal: rgba(255, 255, 255, 0.72);
+$font-color-white-full: rgba(255, 255, 255, 1);
+$font-color__aside-menu: rgba(221, 226, 236, 1);
+$font-color--active: $color__active;
+$font-color__form-login: #9599a4;
+$color-font-entity-title: #2d3340;
+$font-color__modal-title: #676a6c;
+$font-color__input: #606266;
+$font-color__form-item-label: #7f8fa4;
+$font-color__table-row-is-actual-date: $color__active;
+$font-color__columns-settings__option: #2e2e2e;
+
+// Background
+//$background-color-page: rgba();
+$background-color__login: rgba(39, 49, 66, 1);
+$background-color__aside-menu: rgba(65, 74, 89, 1);
+$background-color__aside-menu--active: $color__active;
+$background-color__page: rgba(238, 243, 250, 1);
+$background-color__page-header: rgba(250, 251, 252, 1);
+$background-color__page-content: rgba(250, 251, 252, 1);
+$background-color__opacity: rgba(250, 251, 252, 0);
+$background-color__table-header: #f4f8fb;
+$background-color__table__row--selected: #283142;
+$background-color__login--selected: #009fff;
+$background-color__login--hover: $color__hover--black;
+$background-color__pagination: #f4f4f5;
+$background-color__pagination--active: $color__active;
+$background-color__table-row--is-found: rgba(92, 177, 142, 0.12);
+$background-color__table__button--hover: #e5f5ff;
+$background-color__table-row--selected-is-found: rgba(92, 177, 142, 0.48);
+$background-color__table-row--is-group-title: rgba(0, 0, 0, 0.04);
+$background-color__table-row--selected-is-group-title: rgba(0, 0, 0, 0.04);
+$background-color__table-row--hover: #7a7a7a;
+$background-color__user-menu--hover: #f6f6f6;
+$background-color__table-row-is-actual-date: rgba(0, 136, 142, 0.08);
+$background-color__table-row-is-actual-date--selected: $color__active;
+
+// Border
+$border-color__page-header: rgba(221, 221, 221, 1);
+$border-color__form-login: rgba(255, 255, 255, 1);
+$border-color__login-page-select: #9599a4;
+$border-color-subtabs: #414a59;
+$border-color__table-header: #d9dcde;
+$border-color__pagination-active: #337ab7;
+$border-color__modal: #e8e8e8;
+$border-color__input: $color__dark;
+$border-color__tabs: #dcdfe6;
+$border-color--disabled: #e4e7ed;
+
+// Icon
+$color-icon__background--normal: #a9e1bd;
+$color-icon__background--active: #a5ddff;
+$color-icon__background--disabled: #cccccc;
+$color-icon__background--alarm: #ffbf8f;
+$color-icon__border--normal: #5cb18e;
+$color-icon__border--active: #8dc1e3;
+$color-icon__border--disabled: #999999;
+$color-icon__border--alarm: $color__alarm;
+
+$color-icon__symbol--match: $font-color--active;
+$color-icon__symbol--no-match: #bf3030;
+$color-icon__symbol--no-number: $color__alarm;
+
+// Button
+$background-color__button: $background-color__page-content;
+$background-color__button--disabled: #e9e9e9;
+$background-color__button-primary: $color__dark;
+$background-color__button-primary-border: $color__medium;
+$background-color__button-primary--hover: $color__light;
+$background-color__button-danger: $color__alarm;
+$background-color__button--remove: #ff0000;
+$background-color__button--add: $color__medium;
+$background-color__button--edit: $color__dark;
+$background-color__button--action--disabled: #DEDEDEFF;
+$border-color__button--edit: $color__medium;
+
+// Radio
+$border-color__radio--active: $color__active;
+$background-color__radio--active: $color__active;
+$color-font__radio--active: $color__active;
+
+// Markers
+$font-color__mark--required: #e22347;
+
+// Components
+// mpSelectTree
+$background-color__scroll: #d3dce6;
+$background-color__thumb: #99a9bf;
+$background-color__tree-node--focus: #606266;
+
+//Reports
+$border-color__main-report: #e5e5e5;
+
+// Checkbox
+$color-checkbox--disabled: rgba(0, 0, 0, 0.64);
+
+// Message
+$message-color__background--info: #edf2fc;
+$message-color__border--info: #ebeef5;
+$message-color__font--info: #909399;
+
+$message-color__background--success: #f0f9eb;
+$message-color__border--success: #e1f3d8;
+$message-color__font--success: #67c23a;
+$message-color__background--warning: #fdf6ec;
+$message-color__border--warning: #faecd8;
+$message-color__font--warning: #e6a23c;
+$message-color__background--error: #fef0f0;
+$message-color__border--error: #fde2e2;
+$message-color__font--error: #f56c6c;

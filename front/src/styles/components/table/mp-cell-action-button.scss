@@ -1,0 +1,19 @@
+.mp-cell__action-button {
+  .mp-button--cell.is-circle {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .mp-button__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  span {
+    display: none;
+  }
+
+  .mp-button.mp-button--cell.is-disabled {
+    background-color: $background-color__button--action--disabled;
+  }
+}

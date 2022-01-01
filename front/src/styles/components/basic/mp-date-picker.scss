@@ -1,0 +1,49 @@
+$background-color__mx-input--disabled: #F5F7FA;
+
+.mp-date-picker {
+  width: $width--default;
+
+  .mx-datepicker {
+    width: $width--default;
+
+    .mx-input {
+      font-family: $font;
+      font-size: $font-xs;
+      color: $font-color__input;
+      height: $height__input--large;
+      border-color: $border-color__tabs;
+
+      &:hover, &:focus {
+        border-color: $color--active;
+      }
+      &:disabled {
+        background-color: $background-color__mx-input--disabled;
+      }
+    }
+  }
+  .mx-time-option.active {
+    color: $color--active
+  }
+}
+
+.mp-date-picker__popup {
+  & .mx-btn:hover, .mx-table-date .today, .mx-time-column .mx-time-item.active {
+    color: $color--active;
+  }
+
+  & .mx-calendar-content .cell.active {
+    background-color: $color--active;
+    color: $font-color-white-primary;
+  }
+}
+
+.mp-date-picker--with-select {
+  width: 100%;
+  display: flex;
+  .half {
+    width: 45%;
+    &:first-child {
+      margin-right: 10%;
+    }
+  }
+}

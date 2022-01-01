@@ -1,0 +1,39 @@
+$resize-line__line-size: 2px;
+$resize-line__area-size: 10px;
+
+.resize-line {
+  background-color: $background-color__opacity;
+  box-shadow: $box-shadow__page-content;
+  position: relative;
+
+  &--horizontal {
+    width: $width--default;
+    height: $resize-line__line-size;
+  }
+
+  &--vertical {
+    width: $resize-line__line-size;
+    height: $height--default;
+  }
+
+  &__area {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 10;
+
+    &--horizontal {
+      cursor: ns-resize;
+      width: $width--default;
+      height: calc(#{$resize-line__line-size} + #{$resize-line__area-size});
+      top: calc(#{-$resize-line__area-size} / 2);
+    }
+
+    &--vertical {
+      cursor: ew-resize;
+      height: $height--default;
+      width: calc(#{$resize-line__line-size} + #{$resize-line__area-size});
+      left: calc(#{-$resize-line__area-size} / 2);
+    }
+  }
+}

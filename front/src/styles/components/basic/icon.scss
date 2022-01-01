@@ -1,0 +1,16 @@
+.mp-icon {
+  background: none;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &:focus,
+  &:hover {
+  }
+
+  &--search {
+    background-image: url('../assets/icons/search.svg');
+  }
+}

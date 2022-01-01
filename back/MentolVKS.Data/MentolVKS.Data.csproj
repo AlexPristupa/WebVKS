@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Bases\Tables.cs~RF4114e3.TMP" />
+    <None Remove="Bases\Tables.cs~RF515c413.TMP" />
+    <None Remove="Bases\Tables.cs~RF837e0c.TMP" />
+    <None Remove="Interfaces\Repository\IAspNetRoleRepository.cs~RF80d5c0.TMP" />
+    <None Remove="Interfaces\Repository\IBookingRepository.cs~RF829ded.TMP" />
+    <None Remove="Interfaces\Repository\ISpaceRepository.cs~RF1961d16.TMP" />
+    <None Remove="Interfaces\Repository\IVksServerRepository.cs~RF1a0d0ba2.TMP" />
+    <None Remove="Interfaces\Repository\IVksUserProfilesViewRepository.cs~RF56ace27.TMP" />
+    <None Remove="Interfaces\Repository\IVksUserRepository.cs~RF1aa9f45.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MentolVKS.Common\MentolVKS.Common.csproj" />
+    <ProjectReference Include="..\MentolVKS.Model\MentolVKS.Model.csproj" />
+  </ItemGroup>
+
+</Project>

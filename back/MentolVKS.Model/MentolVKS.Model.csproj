@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BaseModel\BookingView.cs~RF763143.TMP" />
+    <None Remove="BaseModel\ServersGroups.cs~RF1ba196d.TMP" />
+    <None Remove="BaseModel\VksServersView.cs~RF512b8b7.TMP" />
+    <None Remove="BaseModel\СonnectionType.cs~RF1d11b23.TMP" />
+    <None Remove="Validation\BaseViewModel.cs~RF11df16a.TMP" />
+    <None Remove="Validation\BaseViewModel.cs~RF12207dd.TMP" />
+    <None Remove="Validation\BaseViewModel.cs~RFacc493.TMP" />
+    <None Remove="Validation\IBaseError.cs~RF9f1fd7.TMP" />
+    <None Remove="Validation\IValidationErrors.cs~RFa19bd3.TMP" />
+    <None Remove="Validation\PropertyError.cs~RFa04a8b.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LogicCore\LogicCore.csproj" />
+    <ProjectReference Include="..\MentolVKS.Common\MentolVKS.Common.csproj" />
+  </ItemGroup>
+
+</Project>

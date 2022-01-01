@@ -1,0 +1,11 @@
+.mp-table {
+  .ag-row-selected .mp-cell__boolean .el-icon-check {
+    color: $font-color-white-primary;
+  }
+  .mp-cell__boolean .el-icon-check {
+    line-height: $height__input--default;
+    font-size: $font-xl;
+    color: $color__active;
+    font-weight: 600;
+  }
+}

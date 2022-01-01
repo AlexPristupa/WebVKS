@@ -1,0 +1,24 @@
+@mixin placeholderMixin {
+  color: #909399 !important;
+  font-size: $font-xs;
+  font-family: 'Roboto';
+  opacity: 1;
+}
+
+input {
+  &::placeholder {
+    @include placeholderMixin;
+  }
+
+  &::-webkit-input-placeholder {
+    @include placeholderMixin;
+  }
+
+  &::-moz-placeholder {
+    @include placeholderMixin;
+  }
+
+  &:-ms-input-placeholder {
+    @include placeholderMixin;
+  }
+}

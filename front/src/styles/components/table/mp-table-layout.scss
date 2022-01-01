@@ -1,0 +1,164 @@
+$height__filter-list: $height__input--default;
+
+.mp-table-layout {
+  padding: 1rem;
+
+  .el-input__inner {
+    height: $height__input--large;
+    line-height: $height__input--large;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: left;
+    padding: $offset__table-title;
+  }
+
+  &__select {
+    width: $width--default;
+    display: flex;
+    justify-content: flex-start;
+
+    .header-select {
+      display: inherit;
+      height: $height__input--large;
+      line-height: $height__input--large;
+      padding: 0 0 $offset--default;
+
+      &__open-button {
+        width: $width--default;
+        padding: 8px 15px;
+
+        span > span {
+          width: 95%;
+          text-align: left;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: inline-block;
+        }
+      }
+
+      &__popover {
+        width: $width__filter-select-popover;
+        margin-right: $offset-right--default;
+
+        .el-button:not(.mp-button--edit, .mp-button--remove, .mp-button--check) {
+          &:focus,
+          &:hover {
+            color: $font-color-normal;
+            border-color: $color__dark;
+            background-color: transparent;
+          }
+        }
+
+        .filter-list {
+          min-height: $height__filter-list;
+          .el-radio-group {
+            display: flex;
+            align-items: center;
+            width: $width--default;
+            height: $height__input--default;
+            line-height: $height__input--default;
+
+            .el-radio {
+              display: inherit;
+              align-items: center;
+              margin-right: $zero;
+
+              .el-radio__input {
+                display: inherit;
+                align-items: center;
+                height: $height__input--default;
+              }
+
+              .el-radio__label {
+                height: $height__input--default;
+                line-height: $height__input--default;
+
+                .title {
+                  font-size: $font-xxs;
+                  width: 172px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: inline-block;
+                  height: $height__input--default;
+                  line-height: $height__input--default;
+                }
+              }
+            }
+
+            .el-input .el-input__inner {
+              width: 162px;
+              margin-right: $offset--medium;
+              height: $height__input--default;
+              line-height: $height__input--default;
+            }
+
+            .el-button {
+              width: $width__button-table;
+              height: $height__button-table;
+              padding: $zero;
+              border-radius: $border-radius_2;
+
+              i {
+                font-size: $font-xs;
+                line-height: $height__button-table;
+                width: calc(#{$height__button-table} - 2px);
+              }
+            }
+          }
+
+          &__buttons {
+            display: inherit;
+            align-items: center;
+
+            .mp-button__icon {
+              background: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__top-panel {
+    display: flex;
+    width: $width--default;
+    justify-content: space-between;
+  }
+
+  &__top-panel-left {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__top-panel-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    .mp-button {
+      margin: 0 0 15px 15px;
+
+      &:hover {
+        background-color: $background-color__table__button--hover;
+      }
+    }
+  }
+
+  &__table {
+    position: relative;
+    overflow: hidden;
+  }
+}

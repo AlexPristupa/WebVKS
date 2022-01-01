@@ -1,0 +1,300 @@
+jobs:
+  - deployment: DeployWebsiteApp
+    displayName: "Deploy MMS website app"
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
+    environment: $(Build.SourceBranchName)
+    pool:
+      name: WebPortal-Dev-IIS
+    variables:
+      taskId: $[ stageDependencies.Build.Build.outputs['getTaskId.taskId'] ]
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - script: echo $(taskId)
+
+            - task: PowerShell@2
+              displayName: "Download artifact from FTP"
+              inputs:
+                targetType: "inline"
+                script: |
+                  $ftp = "ftp://192.168.80.200"
+                  $username = "mentol"
+                  $password = "mentolqwerty2017!"
+                  $remotePickupDir = "/mentol/version/Temp/"
+                  $artifactName = "$(taskId).zip"
+                  $target = "$(Build.ArtifactStagingDirectory)" + "\" + $artifactName
+                  $uri = $ftp+$remotePickupDir+$artifactName
+                  $wc = New-Object System.Net.WebClient
+                  $wc.Credentials = new-object System.Net.NetworkCredential($username, $password)
+                  $wc.DownloadFile($uri, $target)
+                failOnStderr: true
+
+            - task: IISWebAppManagementOnMachineGroup@0
+              displayName: Create Application Pool
+              inputs:
+                iISDeploymentType: iISApplicationPool
+                actionIISApplicationPool: createOrUpdateAppPool
+                appPoolName: $(taskId)
+
+            - task: IISWebAppManagementOnMachineGroup@0
+              continueOnError: true 
+              displayName: Stop Application Pool
+              inputs:
+                iISDeploymentType: iISApplicationPool
+                actionIISApplicationPool: stopAppPool
+                StartStopRecycleAppPoolName: $(taskId)
+                
+            - task: ExtractFiles@1
+              displayName: Unzip website to apps
+              inputs:
+                archiveFilePatterns: '$(Build.ArtifactStagingDirectory)\$(taskId).zip'
+                destinationFolder: '\\MSRV006\apps\$(taskId)'
+                cleanDestinationFolder: true
+      
+            - task: CopyFiles@2
+              displayName: Copy License
+              inputs:
+                sourceFolder: '\\MSRV006\apps\_template\MMS'
+                contents: "*.*"
+                targetFolder: '\\MSRV006\apps\$(taskId)'
+                overWrite: true
+
+            - task: IISWebAppManagementOnMachineGroup@0
+              displayName: Deploy Website to IIS
+              inputs:
+                #enableIIS: false # Optional
+                #iISDeploymentType: 'IISWebsite' # Options: iISWebsite, iISWebApplication, iISVirtualDirectory, iISApplicationPool
+                #actionIISWebsite: 'CreateOrUpdateWebsite' # Required when iISDeploymentType == IISWebsite# Options: createOrUpdateWebsite, startWebsite, stopWebsite
+                #actionIISApplicationPool: 'CreateOrUpdateAppPool' # Required when iISDeploymentType == IISApplicationPool# Options: createOrUpdateAppPool, startAppPool, stopAppPool, recycleAppPool
+                #startStopWebsiteName: # Required when actionIISWebsite == StartWebsite || ActionIISWebsite == StopWebsite
+                websiteName: $(taskId)
+                websitePhysicalPath: 'D:\apps\$(taskId)'
+                #websitePhysicalPathAuth: 'WebsiteUserPassThrough' # Options: websiteUserPassThrough, websiteWindowsAuth
+                #websiteAuthUserName: # Required when websitePhysicalPathAuth == WebsiteWindowsAuth
+                #websiteAuthUserPassword: # Optional
+                addBinding: true # Optional
+                #protocol: 'http' # Required when iISDeploymentType == RandomDeployment# Options: https, http
+                #iPAddress: 'All Unassigned' # Required when iISDeploymentType == RandomDeployment
+                #port: '80' # Required when iISDeploymentType == RandomDeployment
+                #serverNameIndication: false # Optional
+                #hostNameWithOutSNI: # Optional
+                #hostNameWithHttp: # Optional
+                #hostNameWithSNI: # Required when iISDeploymentType == RandomDeployment
+                #sSLCertThumbPrint: # Required when iISDeploymentType == RandomDeployment
+                bindings: '{"bindings":[{"protocol":"http","ipAddress":"All Unassigned","port":"$(taskId)","hostname":"","sslThumbprint":"","sniFlag":false}]}'
+                createOrUpdateAppPoolForWebsite: true
+                #configureAuthenticationForWebsite: false # Optional
+                appPoolNameForWebsite: $(taskId)
+                #dotNetVersionForWebsite: 'v4.0' # Options: v4.0, v2.0, no Managed Code
+                #pipeLineModeForWebsite: 'Integrated' # Options: integrated, classic
+                #appPoolIdentityForWebsite: 'ApplicationPoolIdentity' # Options: applicationPoolIdentity, localService, localSystem, networkService, specificUser
+                #appPoolUsernameForWebsite: # Required when appPoolIdentityForWebsite == SpecificUser
+                #appPoolPasswordForWebsite: # Optional
+                #anonymousAuthenticationForWebsite: false # Optional
+                #basicAuthenticationForWebsite: false # Optional
+                #windowsAuthenticationForWebsite: true # Optional
+                #physicalPathForVD: '%SystemDrive%\inetpub\wwwroot'
+                #vDPhysicalPathAuth: 'VDUserPassThrough' # Optional. Options: vDUserPassThrough, vDWindowsAuth
+                #vDAuthUserName: # Required when vDPhysicalPathAuth == VDWindowsAuth
+                #vDAuthUserPassword: # Optional
+                virtualPathForApplication: "$(taskId)"
+                #physicalPathForApplication: '%SystemDrive%\inetpub\wwwroot'
+                #applicationPhysicalPathAuth: 'ApplicationUserPassThrough' # Optional. Options: applicationUserPassThrough, applicationWindowsAuth
+                #applicationAuthUserName: # Required when applicationPhysicalPathAuth == ApplicationWindowsAuth
+                #applicationAuthUserPassword: # Optional
+                #createOrUpdateAppPoolForApplication: false # Optional
+                appPoolNameForApplication: $(taskId)
+                #dotNetVersionForApplication: 'v4.0' # Options: v4.0, v2.0, no Managed Code
+                #pipeLineModeForApplication: 'Integrated' # Options: integrated, classic
+                #appPoolIdentityForApplication: 'ApplicationPoolIdentity' # Options: applicationPoolIdentity, localService, localSystem, networkService, specificUser
+                #appPoolUsernameForApplication: # Required when appPoolIdentityForApplication == SpecificUser
+                #appPoolPasswordForApplication: # Optional
+                appPoolName: $(taskId)
+                #dotNetVersion: 'v4.0' # Options: v4.0, v2.0, no Managed Code
+                #pipeLineMode: 'Integrated' # Options: integrated, classic
+                #appPoolIdentity: 'ApplicationPoolIdentity' # Options: applicationPoolIdentity, localService, localSystem, networkService, specificUser
+                #appPoolUsername: # Required when appPoolIdentity == SpecificUser
+                #appPoolPassword: # Optional
+                #startStopRecycleAppPoolName: # Required when actionIISApplicationPool == StartAppPool || ActionIISApplicationPool == StopAppPool || ActionIISApplicationPool == RecycleAppPool
+                #appCmdCommands: # Optional
+
+            - task: IISWebAppManagementOnMachineGroup@0
+              displayName: Start Application Pool
+              inputs:
+                iISDeploymentType: iISApplicationPool
+                actionIISApplicationPool: StartAppPool
+                StartStopRecycleAppPoolName: $(taskId)
+
+            - task: PowerShell@2
+              displayName: "Delete artifact from FTP"
+              inputs:
+                targetType: "inline"
+                script: |
+                  $ftp = "ftp://192.168.80.200"
+                  $username = "mentol"
+                  $password = "mentolqwerty2017!"
+                  $remotePickupDir = "/mentol/version/Temp/"
+                  $artifactName = "$(taskId).zip"
+                  $target = "$(Build.ArtifactStagingDirectory)" + "\" + $artifactName
+                  $uri = $ftp+$remotePickupDir+$artifactName
+                  $ftp = [System.Net.FtpWebRequest]::create("$uri")
+                  $ftp.Credentials =  New-Object System.Net.NetworkCredential($username,$password)
+                  $ftp.Method = [System.Net.WebRequestMethods+Ftp]::DeleteFile
+                  $ftp.GetResponse()
+                failOnStderr: true
+
+            - task: PowerShell@2
+              displayName: "Redmine issue comment"
+              continueOnError: true
+              inputs:
+                targetType: "inline"
+                script: |
+                  add-type @"
+                      using System.Net;
+                      using System.Security.Cryptography.X509Certificates;
+                      public class TrustAllCertsPolicy : ICertificatePolicy {
+                          public bool CheckValidationResult(
+                              ServicePoint srvPoint, X509Certificate certificate,
+                              WebRequest request, int certificateProblem) {
+                              return true;
+                          }
+                      }
+                  "@
+                  [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+                  $Url = "https://192.168.80.201:8443/issues/$(taskId).json?key=d974bd322c2a449a8df9704d97bf26ffef852bce"
+                  $contentType = "application/json"
+                  $body = "{ `"issue`": { `"notes`": `"Deploy site for testing: http://192.168.80.100:$(taskId). Build: AzureDevOps WebMMS $env:BUILD_BUILDNUMBER. Branch: $(taskId). Pull Request: $env:SYSTEM_PULLREQUEST_PULLREQUESTID`" } }"
+                  Invoke-RestMethod -Method 'PUT' -Uri $Url -ContentType $contentType -Body $body
+
+  - job: CleanUp
+    displayName: "Clean Up Pull Request"
+    condition: and(succeeded(), startsWith(variables['Build.SourceVersionMessage'], 'Merged PR '))
+    pool:
+      name: WebPortal-Dev-IIS
+    steps:
+      - task: PowerShell@2
+        displayName: "Get PR ID"
+        inputs:
+          targetType: "inline"
+          script: |
+            $mergedPR = $env:BUILD_SOURCEVERSIONMESSAGE
+            $prId = $mergedPR.Split(':')[0] -replace '\D+'
+            Write-Host "Pull Request ID: $prId"
+                    
+            $Url = "https://mentolpro.visualstudio.com/WebVKS/_apis/git/repositories/WebVKS/pullrequests/$prId"
+            $headers = @{"Authorization" = "Basic a3JhdkBpbmxpbmVwcm8ucnU6YmxrcXdlcnR5MjAxNyE="}
+            $response = Invoke-RestMethod -Method 'GET' -Uri $Url -Headers $headers
+                    
+            [string]$regex='sourceRefName\W\W\Wrefs/heads/[\w\W\d_]+targetRefName'
+            [string]$a = $response.sourceRefName
+            [string]$a = $a.replace("sourceRefName"":""refs/heads/","origin/");
+            [string]$a = $a.replace(""",""targetRefName","");
+            [int]$aFull = $a.length
+            [string]$aN = $a.replace("/","");
+            [int]$aNFull = $aN.length
+            [int]$b = $aFull-$aNFull
+            [string]$c = $a.split("/")[$b]
+            $c = $c.replace("#","")
+            $c = $c.split("_")[0]
+            Write-Host "##vso[task.setvariable variable=taskId]$c"
+
+      - task: PowerShell@2
+        displayName: "Close Redmine Issue"
+        inputs:
+          targetType: "inline"
+          script: |
+            add-type @"
+                using System.Net;
+                using System.Security.Cryptography.X509Certificates;
+                public class TrustAllCertsPolicy : ICertificatePolicy {
+                    public bool CheckValidationResult(
+                        ServicePoint srvPoint, X509Certificate certificate,
+                        WebRequest request, int certificateProblem) {
+                        return true;
+                    }
+                }
+            "@
+            [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+            $Url = "https://192.168.80.201:8443/issues/$(taskId).json?key=d974bd322c2a449a8df9704d97bf26ffef852bce"
+            $contentType = "application/json"
+            $body = "{ `"issue`": { `"status_id`": `"5`" } }"
+            $response = Invoke-RestMethod -Uri $Url
+            if ($response.issue.status.id -eq '29') {
+                Invoke-RestMethod -Method 'PUT' -Uri $Url -ContentType $contentType -Body $body
+            }
+
+      - task: BatchScript@1
+        displayName: "Stop WebSite"
+        inputs:
+          filename: 'C:\Windows\System32\inetsrv\appcmd.exe'
+          arguments: 'stop site /site.name:$(taskId)'
+
+      - task: BatchScript@1
+        displayName: "Stop AppPool"
+        inputs:
+          filename: 'C:\Windows\System32\inetsrv\appcmd.exe'
+          arguments: 'stop apppool /apppool.name:$(taskId)'
+
+      - task: BatchScript@1
+        displayName: "Delete WebSite"
+        inputs:
+          filename: 'C:\Windows\System32\inetsrv\appcmd.exe'
+          arguments: 'delete site $(taskId)'
+
+      - task: BatchScript@1
+        displayName: "Delete AppPool"
+        inputs:
+          filename: 'C:\Windows\System32\inetsrv\appcmd.exe'
+          arguments: 'delete apppool $(taskId)'
+
+      - task: DeleteFiles@1
+        inputs:
+          SourceFolder: 'D:\apps\$(taskId)'
+          Contents: '*'
+          RemoveSourceFolder: true
+
+
+
+  # - job: Test
+  #   displayName: "Run functional tests"
+  #   dependsOn: DeployWebsiteApp
+  #   variables:
+  #     taskId: $[ stageDependencies.Build.Build.outputs['getTaskId.taskId'] ]
+  #   strategy:
+  #     maxParallel: 1
+  #     matrix:
+  #       Chrome:
+  #         BROWSER: chrome
+  #       # Firefox:
+  #       #   BROWSER: firefox
+  #   pool:
+  #     name: WebPortal
+  #   # container:
+  #   #   image: cypress/browsers:node12.14.1-chrome85-ff81
+  #   #   options: --ipc host
+  #   steps:
+  #   - checkout: self
+  #     clean: true
+  #   - task: Npm@1
+  #     inputs:
+  #       command: 'ci'
+  #       workingDir: 'sources/MentolPro.Web.Front'
+  #   - script: npx cypress cache clear
+  #     displayName: 'Cypress cache clear'
+  #     workingDirectory: sources/MentolPro.Web.Front
+  #   - script: npx cypress verify
+  #     displayName: 'Cypress verify'
+  #     workingDirectory: sources/MentolPro.Web.Front
+  #   - script: npx cypress info
+  #     displayName: 'Cypress info'
+  #     workingDirectory: sources/MentolPro.Web.Front
+  #   - script: npx cypress run --browser $(BROWSER) --headless --config baseUrl=http://192.168.80.100:$(taskId)
+  #     displayName: 'Run Cypress tests'
+  #     workingDirectory: sources/MentolPro.Web.Front
+  #     continueOnError: true
+  #   - task: PublishTestResults@2
+  #     inputs:
+  #       testResultsFormat: 'JUnit'
+  #       testResultsFiles: '*-test-*.xml'
+  #       searchFolder: 'sources/MentolPro.Web.Front/results'

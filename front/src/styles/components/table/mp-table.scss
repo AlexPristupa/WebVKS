@@ -1,0 +1,164 @@
+// local variables for table only
+$blur-size: 100%;
+$blur-size-wrapper: 200%; // костыль для IE
+
+.mp-table {
+  &.ag-theme-balham {
+    font-family: $font-family--default;
+
+    & .ag-root-wrapper {
+      border-radius: $border-radius_2;
+    }
+
+    .ag-header {
+      background-color: $background-color__table-header;
+      border-top: $border $border-color__table-header;
+    }
+
+    & .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected) {
+      border: none;
+    }
+
+    & .ag-row-selected {
+      background-color: $background-color__table__row--selected;
+      color: $font-color-white-primary;
+    }
+  }
+
+  &__blur {
+    width: $blur-size-wrapper;
+    height: $blur-size-wrapper;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  &__blur-substrate {
+    background-color: rgba(0, 0, 0, 0.06);
+    position: absolute;
+    width: $blur-size;
+    height: $blur-size;
+    z-index: 1;
+  }
+
+  &__blur-title {
+    background-color: $font-color-white-full;
+    padding: 2rem 3rem;
+  }
+}
+
+.mp-cell {
+  &--flex-centre {
+    display: flex;
+    justify-content: center;
+  }
+  &--link {
+    .reference {
+      text-decoration: underline;
+    }
+  }
+
+  &__action-button {
+    height: $height--default;
+    width: $width--default;
+    display: flex;
+    align-items: center;
+  }
+
+  &__status {
+    height: $height--default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__open {
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      color: $font-color--active;
+    }
+  }
+
+  &--matching {
+    &__item {
+      display: flex;
+
+      &__symbol {
+        font-size: 30px;
+        margin-right: 5px;
+
+        &.match {
+          color: $color-icon__symbol--match;
+        }
+
+        &.no-match {
+          color: $color-icon__symbol--no-match;
+        }
+
+        &.no-number {
+          color: $color-icon__symbol--no-number;
+        }
+      }
+    }
+  }
+
+  &__numbers-list {
+    &__item--without-name {
+      margin-left: $offset-left--default;
+    }
+  }
+}
+
+.ag-header-cell {
+  background-color: $background-color__table-header;
+}
+
+.ag-cell {
+  text-align: left;
+}
+
+.mp-cell-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: $width--default;
+  height: $height--default;
+
+  &__title {
+    flex: 1 1 auto;
+    text-align: left;
+    line-height: $height__input--large;
+    background-color: $background-color__table-header;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__name {
+    flex: 1 1 auto;
+  }
+
+  &__filter {
+    flex: 0 2 22px;
+    display: flex;
+  }
+
+  &__settings {
+    .el-popover__reference-wrapper {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+    }
+  }
+}

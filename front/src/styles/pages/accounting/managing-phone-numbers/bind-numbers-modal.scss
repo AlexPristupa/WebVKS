@@ -1,0 +1,10 @@
+$padding-left__select-label: 20px;
+$width__select-label: 330px;
+
+.el-select-dropdown.bind-number__dropdown .label {
+  padding-left: $padding-left__select-label;
+  width: $width__select-label;
+  color: $font-color--active;
+  font-size: $font-xxxxs;
+  font-weight: bold;
+}

@@ -1,0 +1,111 @@
+$height__mp-draggable__column__list: 160px;
+$height__mp-draggable: 240px;
+
+.mp-draggable {
+  display: flex;
+  align-items: center;
+  width: $width--default;
+  height: $height__mp-draggable;
+
+  &__column {
+    width: calc(#{$width--default} * 0.4);
+
+    &__title {
+      text-align: center;
+      color: $font-color__form-item-label;
+      font-size: $font-xs;
+    }
+
+    &__search {
+      margin-bottom: $offset--default;
+    }
+
+    &__list {
+      border: $border $border-color__tabs;
+      border-radius: $border-radius_4;
+      padding: $offset--mini;
+      height: $height__mp-draggable__column__list;
+      min-height: $height__mp-draggable__column__list;
+      max-height: $height__mp-draggable__column__list;
+    }
+  }
+
+  &__buttons {
+    width: calc(#{$width--default} * 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top: calc(#{$height__mp-draggable} * 0.2);
+    padding-left: $offset--medium;
+
+    .el-button + .el-button {
+      margin-left: $zero;
+    }
+
+    &.middle {
+      padding: $zero;
+      justify-content: center;
+      .mp-button.el-button--small {
+        padding: $zero $offset--default;
+        font-size: $font-md;
+        margin-bottom: $offset--mini;
+        &:last-child {
+          margin-bottom: $zero;
+        }
+      }
+    }
+  }
+}
+
+.dragArea {
+  height: $width--default;
+  width: $height--default;
+  overflow: auto;
+
+  .item {
+    height: $height__input--large;
+    line-height: $height__input--large;
+    margin: $margin__dragArea__item;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: $border $border-color__modal;
+    border-radius: $border-radius_2;
+    padding: $padding__dragArea__item;
+    cursor: pointer;
+
+    &.active {
+      background-color: $background-color__table__row--selected;
+      color: $font-color-white-primary;
+
+      .icon--eye.slashed {
+        background-image: url('../assets/icons/eye-slash-white.svg');
+      }
+    }
+
+    .icon--eye {
+      width: $width__icon;
+      height: $height__icon;
+      background-image: url('../assets/icons/eye.svg');
+      background-repeat: no-repeat;
+      margin-left: $margin__icon--eye;
+      border: none;
+      padding: $zero;
+
+      &.slashed {
+        margin-left: $zero;
+        margin-right: $margin__icon--eye;
+        background-image: url('../assets/icons/eye-slash.svg');
+      }
+    }
+
+    .text {
+      height: $height__input--large;
+      line-height: $height__input--large;
+      font-family: $font-family--default;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

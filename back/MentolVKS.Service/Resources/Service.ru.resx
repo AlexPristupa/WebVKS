@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="Add rights" xml:space="preserve">
+    <value>Добавить права</value>
+  </data>
+  <data name="Added reservation &quot;{0}&quot; for the room &quot;{1}&quot;" xml:space="preserve">
+    <value>Добавлена бронь "{0}" для комнаты "{1}"</value>
+  </data>
+  <data name="added rights:" xml:space="preserve">
+    <value>добавлены права: </value>
+  </data>
+  <data name="Added room &quot;{0}&quot; with URI &quot;{1}&quot; on CMS server group &quot;{2}&quot;" xml:space="preserve">
+    <value>Добавлена комната "{0}" с URI "{1}" на группе серверов CMS "{2}"</value>
+  </data>
+  <data name="Automatic addition. Added user {0} ({1})" xml:space="preserve">
+    <value>Автоматическое добавление. Добавлен пользователь {0} ({1})</value>
+  </data>
+  <data name="Changed value for &quot;{0}&quot; from &quot;{1}&quot; to &quot;{2}&quot;." xml:space="preserve">
+    <value>Изменено значения для "{0}" с "{1}" на "{2}".</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Delete record {0} ({1}) from reservation &quot;{2}&quot;" xml:space="preserve">
+    <value>Удалена запись {0} ({1}) для бронирования "{2}"</value>
+  </data>
+  <data name="Delete reservation &quot;{0}&quot; for the room &quot;{1}&quot;" xml:space="preserve">
+    <value>Удалена бронь "{0}" для комнаты "{1}"</value>
+  </data>
+  <data name="Delete rights" xml:space="preserve">
+    <value>Удалить права</value>
+  </data>
+  <data name="Deleted room &quot;{0}&quot; with URI &quot;{1}&quot; on CMS server group &quot;{2}&quot;" xml:space="preserve">
+    <value>Удалена комната "{0}" с URI "{1}" на группе серверов CMS "{2}"</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="Edit reservation &quot;{0}&quot; for the room &quot;{1}&quot;. Changed value for &quot;{2}&quot; from &quot;{3}&quot; to &quot;{4}&quot;" xml:space="preserve">
+    <value>Отредактирована бронь "{0}" для комнаты "{1}". Изменено значения для "{2}" с "{3}" на "{4}"</value>
+  </data>
+  <data name="Edit rights" xml:space="preserve">
+    <value>Редактировать права</value>
+  </data>
+  <data name="Edited room &quot;{0}&quot; with URI &quot;{1}&quot; on CMS server group &quot;{2}&quot;." xml:space="preserve">
+    <value>Отредактирована комната "{0}" с URI "{1}" на группе серверов CMS "{2}".</value>
+  </data>
+  <data name="Edited room &quot;{0}&quot; with URI &quot;{1}&quot; on CMS server group &quot;{2}&quot;. Changed value for &quot;{3}&quot; from &quot;{4}&quot; to &quot;{5}&quot;" xml:space="preserve">
+    <value>Отредактирована комната "{0}" с URI "{1}" на группе серверов CMS "{2}". Изменено значения для "{3}" с "{4}" на "{5}"</value>
+  </data>
+  <data name="Fatal" xml:space="preserve">
+    <value>Ошибка чтения файла лицензии или разбора</value>
+  </data>
+  <data name="For the user &quot;{0}&quot;, added rights: {1} on record {2} for booking &quot;{3}&quot;." xml:space="preserve">
+    <value>Для пользователя "{0}", добавлены права: {1} на запись {2} для бронирования "{3}".</value>
+  </data>
+  <data name="For the user &quot;{0}&quot;, removed rights: View and Loading on record {1} for booking &quot;{2}&quot;." xml:space="preserve">
+    <value>Для пользователя "{0}", удалены права на: Просмотр и Загрузка на записи {1} для бронирования "{2}".</value>
+  </data>
+  <data name="For the user &quot;{0}&quot;, {1} {2} on record {3} for booking &quot;{4}&quot;." xml:space="preserve">
+    <value>Для пользователя "{0}", {1} {2} на записи {3} для бронирования "{4}".</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="No Valid" xml:space="preserve">
+    <value>Неверная хэш сумма файла лицензии</value>
+  </data>
+  <data name="Non Correct" xml:space="preserve">
+    <value>Некорректный файл лицензии</value>
+  </data>
+  <data name="Non-domain account" xml:space="preserve">
+    <value>Не доменная учетная запись</value>
+  </data>
+  <data name="Not a built-in account" xml:space="preserve">
+    <value>Не встроенная учетная запись</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Отсутствует файл лицензии</value>
+  </data>
+  <data name="Overdue" xml:space="preserve">
+    <value>Просроченная лицензия</value>
+  </data>
+  <data name="Record with id {0} not found!" xml:space="preserve">
+    <value>Запись с ID {0} не найдена!</value>
+  </data>
+  <data name="removed rights:" xml:space="preserve">
+    <value>удалены права: </value>
+  </data>
+  <data name="Reservation &quot;{0}&quot; for the room &quot;{1}&quot; add user &quot;{2}&quot;" xml:space="preserve">
+    <value>Бронь "{0}" для комнаты "{1}" добавлен пользователь "{2}"</value>
+  </data>
+  <data name="Reservation &quot;{0}&quot; for the room &quot;{1}&quot; delete user &quot;{2}&quot;" xml:space="preserve">
+    <value>Бронь "{0}" для комнаты "{1}" удален пользователь "{2}"</value>
+  </data>
+  <data name="Room with id {0} not found!" xml:space="preserve">
+    <value>Комната с ID {0} не найдена!</value>
+  </data>
+  <data name="The room you own is missing. Contact your system administrator." xml:space="preserve">
+    <value>Отсутствует комната, где вы являетесь владельцем. Обратитесь к администратору системы.</value>
+  </data>
+  <data name="The space with the CallId {0} already exists!" xml:space="preserve">
+    <value>Комната с CallId {0} уже существует!</value>
+  </data>
+  <data name="The space with the URI {0} already exists!" xml:space="preserve">
+    <value>Комната с URI {0} уже существует!</value>
+  </data>
+  <data name="The space with the URIalt {0} already exists!" xml:space="preserve">
+    <value>Комната с URIalt {0} уже существует!</value>
+  </data>
+  <data name="User is not found" xml:space="preserve">
+    <value>Пользователь не найден</value>
+  </data>
+  <data name="User not Found in Ldap" xml:space="preserve">
+    <value>Пользователь не найден в каталоге Ldap</value>
+  </data>
+  <data name="username or password cannot be empty" xml:space="preserve">
+    <value>Логин или пароль не может быть пустым</value>
+  </data>
+  <data name="The user has already been assigned rights." xml:space="preserve">
+    <value>Пользователю уже назначены права.</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="View and Loading" xml:space="preserve">
+    <value>Просмотр и Загрузка</value>
+  </data>
+  <data name="Wrong login or password" xml:space="preserve">
+    <value>Неверный логин или пароль</value>
+  </data>
+  <data name="You must assign rights! 'View' or 'Download' rights must be assigned." xml:space="preserve">
+    <value>Необходимо назначить права! Права на "Просмотр" или "Загрузку" должны быть назначены.</value>
+  </data>
+  <data name="Use @domain for username" xml:space="preserve">
+    <value>Для имени пользователя укажите @domain</value>
+  </data>
+</root>

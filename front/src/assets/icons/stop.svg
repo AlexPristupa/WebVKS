@@ -1,0 +1,16 @@
+<svg width="33" height="31" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1{fill:#e7ebed;}.cls-2{fill:#a9e1bd;}.cls-3{fill:#5cb18e;}</style>
+ </defs>
+ <title>Icons</title>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="35" height="33" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path class="cls-1" d="m31,0.75a1.25,1.25 0 0 1 1.25,1.25l0,27a1.25,1.25 0 0 1 -1.25,1.25l-29,0a1.25,1.25 0 0 1 -1.25,-1.25l0,-27a1.25,1.25 0 0 1 1.25,-1.25l29,0m0,-0.75l-29,0a2,2 0 0 0 -2,2l0,27a2,2 0 0 0 2,2l29,0a2,2 0 0 0 2,-2l0,-27a2,2 0 0 0 -2,-2z" id="svg_1"/>
+  <ellipse fill="#999999" stroke="#666666" stroke-width="NaN" cx="16.5" cy="15.5" id="svg_6" rx="9.87497" ry="9.74997"/>
+  <text fill="#ffffff" stroke-width="0" x="11.33916" y="19.3877" id="svg_8" font-size="24" font-family="Oswald, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold" transform="matrix(0.7134727924639999,0,0,0.7311325318478155,2.700858335777509,7.464089626809147) " stroke="#ffffff">S</text>
+ </g>
+</svg>

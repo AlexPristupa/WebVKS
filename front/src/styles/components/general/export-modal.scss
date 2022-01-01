@@ -1,0 +1,34 @@
+.export-excel.export-columns {
+  .el-form .el-form-item {
+    margin-bottom: $offset--default;
+    &__content {
+      height: auto;
+    }
+  }
+
+  .mp-table-layout {
+    padding: $zero;
+    &__title {
+      color: $font-color__form-item-label;
+      font-size: $font-xs;
+    }
+  }
+
+  .el-radio-group {
+    flex-wrap: wrap;
+    width: $width--default;
+
+    .el-radio {
+      &:first-child {
+        padding-bottom: $offset--default;
+      }
+      width: $width--default;
+      color: $font-color__form-item-label;
+      display: flex;
+      justify-content: flex-start;
+      &__label {
+        font-size: $font-xs;
+      }
+    }
+  }
+}

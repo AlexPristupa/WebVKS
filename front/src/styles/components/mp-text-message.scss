@@ -1,0 +1,20 @@
+.mp-text-message {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: -$offset--default;
+  }
+
+  &__item {
+    padding: $offset--default;
+    margin: $offset--small 0;
+    word-break: break-word;
+  }
+}
+
+.mp-text-message--warning {
+  .mp-text-message__item {
+    background-color: $message-color__background--warning;
+    border: $border $message-color__border--warning;
+  }
+}

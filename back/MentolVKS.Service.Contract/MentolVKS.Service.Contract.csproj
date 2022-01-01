@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="IService.ServersGroups.cs~RF1c9f185.TMP" />
+    <None Remove="IService.Space.cs~RF471eb9.TMP" />
+    <None Remove="IService.Space.cs~RF86e95a.TMP" />
+    <None Remove="IService.VksServer.cs~RF1a16297f.TMP" />
+    <None Remove="IService.VksUser.cs~RF1ad7548.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MentolVKS.Model\MentolVKS.Model.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,268 @@
+@mixin editCircleButtonBackground {
+  background-color: $background-color__button--edit;
+  border-color: $border-color__button--edit;
+}
+
+.el-button {
+  background-color: $background-color__button;
+  color: $font-color-normal;
+
+  &:focus,
+  &:hover {
+    color: $font-color-medium;
+    border-color: $color__dark;
+    background-color: $color__light;
+
+    &.is-disabled {
+      box-shadow: none;
+      color: $font-color-normal;
+    }
+  }
+
+  &.is-disabled {
+    background-color: $background-color__button--disabled;
+    border: $border-button;
+    color: $font-color-normal;
+
+    &:focus,
+    &:hover {
+      background-color: $background-color__button--disabled;
+      border: $border-button;
+    }
+  }
+
+  &--primary {
+    background-color: $background-color__button-primary;
+    border: $border $background-color__button-primary-border;
+    color: $font-color-white-full;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $background-color__button-primary--hover;
+      border: $border $color__dark;
+      color: $font-color-medium;
+    }
+  }
+
+  &--danger {
+    background-color: $background-color__button-danger;
+    border: $border-button__danger;
+    color: $font-color-white-primary;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $background-color__button-danger;
+      border: $border-button__danger;
+      color: $font-color-white-full;
+    }
+  }
+}
+
+.mp-button__group {
+  .el-button + .el-button {
+    margin-left: $offset-left--default;
+  }
+}
+
+.mp-button.el-button--small {
+  padding: 9px 15px;
+  border-radius: $border-radius_3;
+
+  .mp-button__icon {
+    width: $width__button__icon;
+    height: $height__button__icon;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.mp-button {
+  &__icon {
+    width: $width__action-button;
+    height: $height__action-button;
+  }
+
+  &--cell.el-button--mini.is-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    width: $width__cell-button__icon;
+    height: $height__cell-button__icon;
+    min-width: $width__cell-button__icon;
+    min-height: $height__cell-button__icon;
+    max-width: $width__cell-button__icon;
+    max-height: $height__cell-button__icon;
+    border: none;
+    padding: $zero;
+  }
+
+  &--properties .mp-button__icon {
+    width: $width__button--properties;
+    height: $height__button--properties;
+    background-image: url('../assets/icons/properties.svg');
+  }
+
+  &--active-properties .mp-button__icon {
+    width: $width__button--properties;
+    height: $height__button--properties;
+    background-image: url('../assets/icons/properties-active.svg');
+  }
+
+  &--column-setting {
+    width: $width__button--column-setting;
+    height: $height__button--column-setting;
+
+    .mp-button__icon {
+      display: none;
+    }
+  }
+
+  // normal
+
+  &--info .mp-button__icon {
+    background-image: url('../assets/icons/info.svg');
+  }
+
+  &--history .mp-button__icon {
+    background-image: url('../assets/icons/history.svg');
+  }
+
+  &--add .mp-button__icon {
+    background-image: url('../assets/icons/add.svg');
+  }
+
+  &--remove .mp-button__icon {
+    background-image: url('../assets/icons/remove.svg');
+  }
+
+  &--clear .mp-button__icon {
+    background-image: url('../assets/icons/clear.svg');
+  }
+
+  &--edit .mp-button__icon {
+    background-image: url('../assets/icons/edit.svg');
+  }
+
+  &--import .mp-button__icon {
+    background-image: url('../assets/icons/import.svg');
+  }
+
+  &--export .mp-button__icon {
+    background-image: url('../assets/icons/export.svg');
+  }
+
+  &--filter .mp-button__icon {
+    background-image: url('../assets/icons/filter.svg');
+  }
+
+  &--filter-contains .mp-button__icon {
+    background-image: url('../assets/icons/filter-contains.svg');
+  }
+
+  &--save .mp-button__icon {
+    background-image: url('../assets/icons/save.svg');
+  }
+
+  &--stop .mp-button__icon {
+    background-image: url('../assets/icons/stop.svg');
+  }
+
+  &--cancel .mp-button__icon {
+    background-image: url('../assets/icons/cancel.svg');
+  }
+
+  &--issue-number .mp-button__icon {
+    background-image: url('../assets/icons/issueNumber.svg');
+  }
+
+  &--collapse.mp-button--icon .mp-button__icon {
+    background-image: url('../assets/icons/arrow-down.svg');
+    transform: rotate(180deg);
+    background-size: auto;
+  }
+
+  &.mp-button--cell {
+    .el-icon-plus, .el-icon-edit, .el-icon-delete {
+      width: $width--default;
+      line-height: $height__cell-button__icon;
+      font-size: $font-xs;
+      color: $font-color-white-primary;
+    }
+
+    &.mp-button--add {
+      background-color: $background-color__button--add;
+    }
+
+    &.mp-button--edit {
+      @include editCircleButtonBackground;
+    }
+
+    &.mp-button--link {
+      @include editCircleButtonBackground;
+      color: $font-color-white-primary;
+    }
+
+    &.mp-button--download {
+      @include editCircleButtonBackground;
+      color: $font-color-white-primary;
+    }
+
+    &.mp-button--play {
+      @include editCircleButtonBackground;
+      background-image: url('../assets/icons/play-solid.svg');
+      background-repeat: no-repeat;
+    }
+
+    &.mp-button--stop {
+      @include editCircleButtonBackground;
+      background-image: url('../assets/icons/stop-solid.svg');
+      background-repeat: no-repeat;
+    }
+
+    &.mp-button--remove {
+      background-color: $background-color__button--remove;
+    }
+    &.is-disabled {
+      background-color: $background-color__button--action--disabled;
+    }
+  }
+
+
+  // button sort
+  &__sort {
+    width: $width__button--sort;
+    height: $height__button--sort;
+    display: flex;
+
+    .sort__asc {
+      background-image: url('../assets/icons/long-arrow-alt-up.svg');
+
+      &.active {
+        background-image: url('../assets/icons/long-arrow-alt-up-green.svg');
+      }
+    }
+
+    .sort__desc {
+      background-image: url('../assets/icons/long-arrow-alt-down.svg');
+
+      &.active {
+        background-image: url('../assets/icons/long-arrow-alt-down-green.svg');
+      }
+    }
+
+    .sort__desc, .sort__asc {
+      width: $width__button--sort__icon;
+      height: $height__button--sort__icon;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+
+.mp-button.mp-button--icon {
+  padding: $zero;
+}

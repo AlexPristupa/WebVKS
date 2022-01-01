@@ -1,0 +1,94 @@
+// width-height sizes
+$width--default: 100%;
+$height--default: $width--default;
+$width__mp-column-filter: 340px;
+$height__mp-column-filter--select__body: 182px;
+$height__draggable-list: $height__mp-column-filter--select__body;
+$width__filter-select-popover: 242px;
+$width__user-menu: 170px;
+$width__columns-settings: 175px;
+
+// full size
+$full-size: 100%;
+$full-width: $full-size;
+$full-height: $full-size;
+$window-width: 100vw;
+$window-height: 100vh;
+
+// tabs sizes
+$height__tabs--default: 42px;
+$height__tabs-item--default: 40px;
+$min-width__tabs-item: 170px;
+
+// input sizes
+$height__input--default: 28px;
+$height__input-icon--default: 26px;
+$height__input--large: 32px;
+
+// option sizes
+$height__option: 23px;
+
+// button sizes
+$width__button-table: 20px;
+$height__button-table: $width__button-table;
+$width__icon: 15px;
+$height__icon: $width__icon;
+$width__button--properties: $width__icon;
+$height__button--properties: $width__button--properties;
+$width__button--column-setting: 86px;
+$height__button--column-setting: 32px;
+$width__action-button: 22px;
+$height__action-button: $width__action-button;
+
+//  -- sort button sizes
+$width__button--sort: 14px;
+$height__button--sort: 16px;
+$width__button--sort__icon: 7px;
+$height__button--sort__icon: 22px;
+
+//icon sizes
+$width__button__icon: 30px;
+$height__button__icon: $width__button__icon;
+$width__cell-button__icon: $width__action-button;
+$height__cell-button__icon: $width__cell-button__icon;
+$width__icon--confirm: 25px;
+$height__icon--confirm: $width__icon--confirm;
+
+// standard offset sizes
+$offset--small: 0.2rem;
+$offset--mini: 5px;
+$offset--medium: 10px;
+$offset--default: 15px;
+$offset--large: 30px;
+$offset-right-left--default: 0 15px;
+$offset__table-title: 0 0 15px;
+$offset-top-bottom--default: 15px 0;
+$offset-right--default: $offset--default;
+$offset-left--default: $offset--default;
+$margin__user-menu__item: 0 4px;
+$padding__user-menu__item: 2px 0 2px 15px;
+$form-offset--bottom--default: 18px;
+$zero: 0;
+
+//reports
+$margin-bottom__menu-report: 2px;
+$margin-main_reports-title: 1px 0;
+$padding-main_text-item: 5px 0px;
+
+// modal offset sizes
+$offset--modal: 24px;
+
+// mp-loading-spinner
+$mp-loading-spinner__size: 50px;
+
+// table layout
+$height__table-layout-row: 32px;
+
+// mp-filtration-panel
+$fp-filter-select__height: 120px;
+$fp-filter-select__back-indent: 6px;
+$fp-filter-select__options-height: 322px;
+$fp-filter__offcet: 0.5rem;
+
+// filter
+$filter-select__dropdown-height: 400px;

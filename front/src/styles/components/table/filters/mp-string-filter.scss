@@ -1,0 +1,13 @@
+.column-filter__string {
+  .column-filter-string__item {
+    .mp-button--add {
+      background-image: url('../assets/icons/add-circle.svg');
+      background-position: center;
+    }
+
+    .mp-button--remove {
+      background-image: url('../assets/icons/delete-circle.svg');
+      background-position: center;
+    }
+  }
+}

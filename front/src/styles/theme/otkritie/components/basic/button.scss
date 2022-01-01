@@ -1,0 +1,56 @@
+.theme-otkritie {
+  .mp-button {
+
+    &--active-properties .mp-button__icon {
+      background-image: url('../assets/theme/otkritie/icons/properties-active.svg');
+    }
+
+    // normal
+
+    &--export .mp-button__icon {
+      background-image: url('../assets/theme/otkritie/icons/export.svg');
+    }
+
+    // button sort
+    &__sort {
+
+      .sort__asc {
+        &.active {
+          background-image: url('../assets/theme/otkritie/icons/long-arrow-alt-up-active.svg');
+        }
+      }
+
+      .sort__desc {
+        &.active {
+          background-image: url('../assets/theme/otkritie/icons/long-arrow-alt-down-active.svg');
+        }
+      }
+    }
+
+    &--save {
+      &:active,
+      &:hover,
+      &:focus {
+        background-color: #d3f8fa;
+        border: $color__active;
+        color: $font-color-white-full;
+      }
+    }
+  }
+
+  .el-radio__input.is-checked {
+    & .el-radio__inner {
+      border-color: $color__dark;
+      background: $color__dark;
+    }
+
+    & + .el-radio__label {
+      color: $color__dark
+    }
+  }
+
+  & .column-filter__string .column-filter-string__item .mp-button--add {
+    background-image: url('../assets/theme/otkritie/icons/add-circle.svg');
+  }
+}
+

@@ -1,0 +1,21 @@
+$height__el-input-number_button: 29px;
+
+.el-input.is-active .el-input__inner, .el-input__inner:focus {
+  border-color: $color--active;
+}
+
+.el-input-number {
+  height: $height__input--large;
+  line-height: $height__input--large;
+  .el-input-number__decrease:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled), .el-input-number__increase:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled)
+  {
+    border-color: $color--active;
+  }
+  .el-input-number__decrease, .el-input-number__increase {
+    height: $height__el-input-number_button;
+    line-height: $height__el-input-number_button;
+    &:hover {
+      color: $color--active;
+    }
+  }
+}

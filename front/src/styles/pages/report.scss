@@ -1,0 +1,181 @@
+.container-report {
+  height: $height--default;
+
+  .rigth-container {
+    margin-left: $offset-left--default;
+    padding: 0px;
+  }
+
+  h5{ text-align: left; padding: 0 0 $offset-right--default 0; margin: 0;}
+
+  h4,
+  h6 {
+    line-height: 1.1;
+  }
+
+  h4 {
+    font-size: $font-sm;
+    text-align: left;
+    padding: 0;
+    margin: $margin-main_reports-title;
+  }
+
+  h6 {
+    font-size: $font-xs;
+    margin: $margin-main_reports-title;
+    font-weight: 100;
+    text-align: left;
+  }
+
+  .scroll-filter__item-card {
+    padding-top: 10px;
+    max-height: calc(100vh - 17.5rem);
+    overflow: auto;
+    width: inherit;
+  }
+
+  .scroll-filter__text-item {
+    padding: $padding-main_text-item;
+    margin-bottom: $margin-bottom__menu-report;
+  }
+
+  .scroll-filter__text-item__active {
+    background-color: $border-color__input;
+    cursor: pointer;
+    color: $font-color-white-full;
+    padding: $padding-main_text-item;
+     margin-bottom: $margin-bottom__menu-report;
+  }
+
+  .scroll-filter__text-item:not(.scroll-filter__text-item__active):hover {
+    background-color: $border-color__input;
+    cursor: pointer;  
+  }
+
+  .el-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #b3c0d1;
+    color: #333;
+    line-height: 60px;
+    align-items: center;
+    .layout__buttons {
+
+      height: 32px;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      & button{
+        height: 32px;
+      }
+    }
+  }
+
+  .el-aside {
+    color: #333;
+  }
+
+  .box-card {
+    width: 480px;
+  }
+
+  .content-card {
+    width: $width--default;
+
+    .el-card__body {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .el-dialog__body {
+      padding: $offset-right--default $offset-right--default $offset-right--default $offset-right--default;
+      
+    }
+
+    
+    .el-dialog__header {
+      padding: $offset-right--default $offset-right--default 10px;
+      border-bottom: $border $border-color__main-report;
+    }
+
+    .el-dialog__footer {
+      padding: $offset-right--default;
+      text-align: right;
+      -webkit-box-sizing: border-box;
+      border-top: $border $border-color__main-report;
+    }
+
+    img {
+      border: $border #303133;
+    }
+  }
+
+  .container-form {
+    background-color: #eff0f4;
+  }
+
+  .head-view{
+    margin:$offset-right--default 0px;
+    h4 {text-align: center;}
+  }
+
+  .el-card__body {
+    padding: $width__button--properties;
+    height: calc(100vh - 150px);
+  }
+
+  .el-form {
+    padding: $offset-left--default;
+    width: 420px;
+  }
+
+  .el-form-item__label {
+    text-align: left;
+    vertical-align: middle;
+    float: left;
+    font-size: $font-sm;
+    color: $background-color__tree-node--focus;
+    line-height: $height__tabs-item--default;
+    padding: 0 12px 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .el-select {
+    display: inline-block;
+    position: relative;
+    width: $width--default;
+  }
+
+  .export-reports {
+    text-align: left;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+
+  .radio-group {
+    margin-left: $offset-left--default;
+  }
+
+  .el-radio.is-bordered {
+    background-color: white;
+  }
+
+  .preview {
+    color: $font-color__mark--required;
+    padding-left: $offset-left--default;
+  }
+}
+
+.tick {
+  text-align: left;
+}
+    

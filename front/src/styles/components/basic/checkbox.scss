@@ -1,0 +1,29 @@
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: $color__active;
+  border-color: $color__active;
+}
+
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  color: $color__active
+}
+
+.el-checkbox__input.is-focus .el-checkbox__inner {
+  border-color: $color__active
+}
+
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner::after {
+  border-color: $color-checkbox--disabled
+}
+
+.el-checkbox__label {
+  word-break: normal;
+  line-height: $height__input--default;
+}
+
+.el-checkbox:hover, .el-checkbox.is-checked:hover {
+  background-color: $color--active;
+  .el-checkbox__label {
+    color: $font-color-white-primary;
+  }
+}

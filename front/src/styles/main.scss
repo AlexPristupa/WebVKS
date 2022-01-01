@@ -1,0 +1,171 @@
+// inlineProStyles
+@import '../../node_modules/vue2-datepicker/index.css';
+@import '../../node_modules/video.js/dist/video-js.css';
+
+// Variables
+@import './variables/colors';
+@import './variables/box-shadow';
+@import './variables/border';
+@import './variables/sizes';
+@import './variables/font-sizes';
+@import './variables/animation';
+
+// Fonts
+@import './variables/fonts';
+
+// Theme
+@import 'THEME_NAME';
+
+// Layouts
+@import './layouts/main-layout';
+@import './layouts/form-layout';
+@import './layouts/form-column-layout';
+@import './layouts/three-panel-layout';
+@import './layouts/two-horizontal-panels-layout';
+@import './layouts/resize';
+
+// Basic components
+@import './components/basic/button';
+@import './components/mp-video-player';
+@import './components/basic/switch';
+@import './components/basic/select';
+@import './components/basic/input';
+@import './components/basic/dropdown';
+@import './components/basic/loading-spinner';
+@import './components/mp-pagination-top';
+@import 'components/table/mp-table';
+@import 'components/table/customTooltip';
+@import './components/basic/icon';
+@import 'components/table/filters/mp-column-filter';
+@import 'components/table/filters/mp-select-filter';
+@import 'components/table/filters/mp-string-filter';
+@import 'components/table/filters/MpDateFilter/mp-date-filter';
+@import 'components/table/mp-table-layout';
+@import 'components/table/mp-cell-action-button';
+@import 'components/table/mp-cell-structure';
+@import 'components/table/mp-cell-link';
+@import 'components/table/mp-cell-group';
+@import 'components/table/mp-cell-checkbox';
+@import 'components/table/mp-cell-checkboxes';
+@import 'components/table/mp-cell-boolean';
+@import 'components/table/mp-cell-edit-value';
+@import 'components/table/columnSettings/column-settings';
+@import 'components/table/mp-cell-header-checkbox';
+@import 'components/basic/mp-search';
+@import 'components/basic/panels';
+@import 'components/mp-draggable';
+@import 'components/mp-modal/mp-modal';
+@import 'components/basic/mp-confirm-modal';
+@import 'components/basic/radio';
+@import 'components/basic/placeholder';
+@import 'components/basic/scroll';
+@import 'components/basic/message-box';
+@import 'components/general/export-modal';
+@import 'components/general/save-filter';
+@import 'components/general/editing-history';
+@import 'components/basic/select-tree';
+@import 'components/basic/checkbox';
+@import 'components/basic/mp-date-picker';
+@import 'components/mp-loading-spinner';
+@import 'components/mp-select';
+@import 'components/mp-text-message';
+
+// Components
+@import 'components/filtration-panel/filtration-panel';
+@import 'components/filtration-panel/filtration-panel-filter-wrapper';
+@import 'components/filtration-panel/filter-parameters';
+@import 'components/filtration-panel/filtration-panel-string-filter';
+@import 'components/filtration-panel/filtration-panel-select-filter';
+@import 'components/filtration-panel/filtration-panel-date-filter';
+
+// Components
+@import './components/login-form';
+@import './components/aside-menu';
+@import './components/user-menu';
+@import './components/form';
+@import './components/timer-tick';
+
+// Pages
+@import './pages/login-page';
+@import './pages/user-profile';
+@import './pages/report';
+@import './pages/organisation';
+@import './pages/accounting/managing-phone-numbers/managing-phone-numbers';
+@import './pages/accounting/managing-phone-numbers/confirm-save-value-property';
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/RobotoRegular.eot) format('embedded-opentype'),
+  url(./fonts/RobotoRegular.woff2) format('woff2'),
+  url(./fonts/RobotoRegular.woff) format('woff'),
+  url(./fonts/Roboto-Italic.ttf) format('truetype'),
+  url(./fonts/RobotoRegular.svg#RobotoRegular) format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/RobotoRegular.eot) format('embedded-opentype'),
+  url(./fonts/RobotoRegular.woff2) format('woff2'),
+  url(./fonts/RobotoRegular.woff) format('woff'),
+  url(./fonts/Roboto-MediumItalic.ttf) format('truetype'),
+  url(./fonts/RobotoRegular.svg#RobotoRegular) format('svg');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/RobotoRegular.eot) format('embedded-opentype'),
+  url(./fonts/RobotoRegular.woff2) format('woff2'),
+  url(./fonts/RobotoRegular.woff) format('woff'),
+  url(./fonts/Roboto-BoldItalic.ttf) format('truetype'),
+  url(./fonts/RobotoRegular.svg#RobotoRegular) format('svg');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/RobotoRegular.eot) format('embedded-opentype'),
+  url(./fonts/RobotoRegular.woff2) format('woff2'),
+  url(./fonts/RobotoRegular.woff) format('woff'),
+  url(./fonts/Roboto-Bold.ttf) format('truetype'),
+  url(./fonts/RobotoRegular.svg#RobotoRegular) format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/RobotoRegular.eot) format('embedded-opentype'),
+  url(./fonts/RobotoRegular.woff2) format('woff2'),
+  url(./fonts/RobotoRegular.woff) format('woff'),
+  url(./fonts/Roboto-Medium.ttf) format('truetype'),
+  url(./fonts/RobotoRegular.svg#RobotoRegular) format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/RobotoRegular.eot) format('embedded-opentype'),
+  url(./fonts/RobotoRegular.woff2) format('woff2'),
+  url(./fonts/RobotoRegular.woff) format('woff'),
+  url(./fonts/Roboto-Regular.ttf) format('truetype'),
+  url(./fonts/RobotoRegular.svg#RobotoRegular) format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}

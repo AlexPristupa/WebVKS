@@ -1,0 +1,56 @@
+.theme-otkritie {
+  .aside {
+    background-color: $background-color__aside-menu;
+  }
+
+  .aside-menu {
+
+    & .logo {
+      background-image: url('../assets/theme/otkritie/logo/logo_menu_big.png');
+    }
+
+    &__item {
+
+      &-icon--accounting,
+      &-icon--conference {
+        background-image: url('../assets/icons/asideMenu/icon_org_select_hover.png');
+      }
+
+      &-icon--reports {
+        background-image: url('../assets/icons/asideMenu/icon_reports_hover.png');
+      }
+
+      &-icon--booking,
+      &-icon--planing {
+        background-image: url('../assets/icons/asideMenu/icon_notify_hover.png');
+      }
+
+      &-icon--history {
+        background-image: url('../assets/icons/asideMenu/icon_history_hover.png');
+      }
+
+      &-icon--setting {
+        background-image: url('../assets/icons/asideMenu/icon_settings_hover.png');
+      }
+
+      &-icon--cms,
+      &-icon--handbooks {
+        background-image: url('../assets/icons/asideMenu/icon_manual_select_hover.png');
+      }
+
+      &--active,
+      &:hover {
+        border-top: none;
+        background-color: $background-color__aside-menu--active;
+
+        .aside-menu__item-title {
+          color: $font-color-white-primary;
+        }
+      }
+    }
+
+    &__item-title {
+      color: $font-color__aside-menu;
+    }
+  }
+}

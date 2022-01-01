@@ -1,0 +1,12 @@
+.ag-theme-balham .ag-row.node__is-title-group {
+  background-color: $background-color__table-row--is-group-title;
+
+  &.ag-row-hover {
+    background-color: $background-color__table-row--hover;
+  }
+}
+
+.ag-theme-balham .ag-row.node__is-title-group.ag-row-selected {
+  background-color: $background-color__table__row--selected;
+  color: $font-color-white-primary;
+}

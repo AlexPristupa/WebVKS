@@ -1,0 +1,97 @@
+@mixin input-height--default {
+  height: $height__input--default;
+  line-height: $height__input--default;
+}
+
+@mixin input-height--large {
+  height: $height__input--large;
+  line-height: $height__input--large;
+}
+
+@mixin pagination-bottom__buttons {
+  min-width: 30px;
+  background-color: $background-color__pagination;
+  border-radius: $border-radius_2;
+  cursor: pointer;
+  color: $font-color-low;
+}
+
+.mp-table-layout__pagination {
+  .mp-pagination {
+    display: flex;
+    align-items: center;
+
+    &__prefix,
+    &__postfix {
+      font-size: 0.8rem;
+      padding: 0 0 15px 15px;
+      color: $font-color-normal;
+    }
+
+    .el-pager li.active {
+      color: $font-color--active;
+    }
+  }
+
+  .el-input--small .el-input__inner {
+    &:hover {
+      border-color: $font-color--active;
+    }
+  }
+
+  .el-pagination__sizes .el-input .el-input__inner {
+    &:hover, &:focus {
+      border-color: $font-color--active;
+    }
+  }
+
+  .mp-pagination__page-size--top {
+    width: 5rem;
+    height: $height__input--large;
+    padding: 0 0 15px 15px;
+
+    .el-input, .el-input__inner {
+      @include input-height--large;
+    }
+  }
+}
+
+.mp-table-layout__pagination--bottom, .editing-history {
+  margin-top: 15px;
+
+  .el-pagination--small .el-pagination__jump {
+    @include input-height--default;
+    margin-left: 25px;
+
+    .el-input {
+      margin-left: 25px;
+
+      input {
+        @include input-height--default;
+      }
+    }
+  }
+
+  .el-pagination--small .btn-prev,
+  .el-pagination--small .btn-next, {
+    @include input-height--default;
+    @include pagination-bottom__buttons;
+  }
+
+  .el-pagination--small .btn-prev,
+  .el-pagination--small .btn-next,
+  .el-pagination--small .el-pager li,
+  .el-pagination--small .el-pager li:last-child {
+    @include input-height--default;
+    @include pagination-bottom__buttons;
+    margin: 0 5px;
+    padding: 0px 8px;
+    border: none;
+  }
+
+  .el-pagination--small .el-pager li.active {
+    background-color: $background-color__pagination--active;
+    border: $border $border-color__pagination-active;
+    color: $font-color-white-primary;
+  }
+}

@@ -1,0 +1,25 @@
+.filtration-panel-filter-wrapper {
+  padding-top: $offset--default;
+
+  &__controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 4px;
+
+    .mp-button {
+      margin-left: 10px;
+    }
+  }
+
+  &__title {
+    padding-left: 0.2rem;
+    font-weight: bolder;
+    font-size: $font-xs;
+  }
+
+  &__body {
+    max-height: $fp-filter-select__height;
+    overflow-y: hidden;
+  }
+}

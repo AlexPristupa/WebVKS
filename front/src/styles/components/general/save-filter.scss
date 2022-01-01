@@ -1,0 +1,16 @@
+.save-filter {
+  .el-radio-group {
+    display: flex;
+    .el-radio {
+      margin: 0;
+      &.is-bordered+.el-radio.is-bordered {
+        margin-left: $offset-left--default;
+      }
+    }
+    & .el-radio--small.is-bordered {
+      padding: $offset-right-left--default;
+      height: 28px;
+      line-height: 26px;
+    }
+  }
+}

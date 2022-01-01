@@ -1,0 +1,34 @@
+$color__active: #0088AA;
+$color__hover--black: rgba(0, 0, 0, 0.24);
+$color__dark: $color__active; // 213, 67, 45
+$color__medium: $color__dark; // 213, 56, 58
+$color__light: #b6ceea; // 213, 56, 82
+
+// Fonts
+$font-color__aside-menu: $font-color-white-full;
+$font-color__form-login: $font-color-white-primary;
+$font-color--active: $color__dark;
+
+// Background
+$background-color__aside-menu: $color__dark;
+$background-color__login: $color__active;
+$background-color__aside-menu--active: #0099C1;
+$background-color__table__row--selected: $color__dark;
+$background-color__login--selected: $color__dark;
+$background-color__pagination--active: $color__active;
+$background-color__table-row--is-found: #0099C1;
+$background-color__table-row--selected-is-found: #00B4E3;
+$background-color__table-row--hover: #7a7a7a;
+$background-color__button--action--disabled: #DEDEDEFF;
+$background-color__table-row-is-actual-date--selected: $color__active;
+
+// Border
+$border-color__login-page-select: $font-color-white-primary;
+
+// Button
+$background-color__button-primary: $color__dark;
+$background-color__button-primary-border: $color__medium;
+$background-color__button-primary--hover: $color__light;
+$background-color__button--add: $color__medium;
+$background-color__button--edit: $color__dark;
+$border-color__button--edit: $color__medium;

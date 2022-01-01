@@ -1,0 +1,18 @@
+.mp-cell-header-checkbox {
+  &__modal {
+    padding: $offset--modal;
+
+    .el-radio {
+      margin-bottom: $offset--mini;
+    }
+
+    .el-button {
+      padding: 0;
+      background-color: inherit;
+    }
+  }
+  &__modal-title {
+    padding-bottom: $offset--default;
+    font-size: $font-lg;
+  }
+}

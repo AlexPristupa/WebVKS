@@ -1,0 +1,24 @@
+$width__editing-history: 50vh;
+$width__editing-history__pagination: 80%;
+
+.editing-history {
+  .el-dialog__body {
+    padding: 0;
+    height: $width__editing-history;
+  }
+  .el-dialog__footer {
+    span {
+      display: flex;
+      justify-content: space-between;
+      .mp-pagination {
+        width: $width__editing-history__pagination;
+        .el-pagination {
+          display: flex;
+        }
+      }
+    }
+  }
+  .mp-table-layout__bottom-panel {
+    display: none;
+  }
+}

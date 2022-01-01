@@ -1,0 +1,9 @@
+@import "src/styles/variables/sizes";
+
+.mp-modal--edit-booking-pin-setting {
+  .button--schedule {
+    display: flex;
+    width: $width--default;
+    margin-bottom: $form-offset--bottom--default;
+  }
+}

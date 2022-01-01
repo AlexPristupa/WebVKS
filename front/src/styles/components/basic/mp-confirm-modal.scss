@@ -1,0 +1,35 @@
+.mp-confirm-modal {
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
+  .el-button--primary {
+    padding: 10px 15px;
+  }
+
+  .el-button.is-disabled {
+    cursor: not-allowed;
+  }
+
+  &__icon {
+    flex: 0 0 50px;
+    width: $width__icon--confirm;
+    height: $height__icon--confirm;
+    align-self: start;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('../assets/icons/info.svg');
+  }
+
+  &__text {
+    margin: 0 0 0 1rem;
+    text-align: left;
+  }
+
+  &__message {
+    margin: $zero;
+    word-break: break-word;
+  }
+}

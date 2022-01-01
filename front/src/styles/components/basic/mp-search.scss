@@ -1,0 +1,24 @@
+.mp-search {
+  padding: 0 0 15px;
+
+  &.el-input {
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+
+    .el-input__inner {
+      height: $height__input--large;
+      line-height: $height__input--large;
+      width: 173px;
+
+      &:focus, &:hover {
+        border-color: $font-color--active;
+      }
+    }
+
+    .el-input__icon {
+      height: $height__input--large;
+      line-height: $height__input--large;
+    }
+  }
+}

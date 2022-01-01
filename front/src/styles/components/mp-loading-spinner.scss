@@ -1,0 +1,21 @@
+.mp-loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $mp-loading-spinner__size/2;
+
+  &__circular {
+    height: $mp-loading-spinner__size;
+    width: $mp-loading-spinner__size;
+    animation: $loading-spinner__linear;
+  }
+
+  &__path {
+    animation: $loading-spinner__ease-in-out;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    stroke: $color__dark;
+    stroke-linecap: round;
+  }
+}

@@ -1,0 +1,17 @@
+.mp-modal--servers-groups {
+  .icon--eye {
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/icons/eye--white.svg');
+    background-repeat: no-repeat;
+    margin: 5px 10px;
+    border: none;
+    padding: $zero;
+
+    &.slashed {
+      margin-left: $zero;
+      margin-right: $margin__icon--eye;
+      background-image: url('../assets/icons/eye-slash.svg');
+    }
+  }
+}

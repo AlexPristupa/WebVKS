@@ -1,0 +1,112 @@
+.aside {
+  background-color: $background-color__aside-menu;
+}
+.aside-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $font-color__aside-menu;
+  min-height: 100vh;
+  width: 104px;
+
+  & .logo {
+    padding-top: 20px;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background-image: url('../assets/logo/logo_menu_big.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    //background-clip: content-box;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    width: 104px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: 98px;
+    cursor: pointer;
+
+    &--active,
+    &:hover {
+      border-top: $border $border-color-subtabs;
+      background-color: $background-color__aside-menu--active;
+
+      .aside-menu__item-icon--accounting,
+      .aside-menu__item-icon--conference {
+        background-image: url('../assets/icons/asideMenu/icon_org_select_hover.png');
+      }
+      .aside-menu__item-icon--reports {
+        background-image: url('../assets/icons/asideMenu/icon_reports_hover.png');
+      }
+      .aside-menu__item-icon--booking,
+      .aside-menu__item-icon--planing {
+        background-image: url('../assets/icons/asideMenu/icon_notify_hover.png');
+      }
+      .aside-menu__item-icon--history {
+        background-image: url('../assets/icons/asideMenu/icon_history_hover.png');
+      }
+      .aside-menu__item-icon--setting {
+        background-image: url('../assets/icons/asideMenu/icon_settings_hover.png');
+      }
+      .aside-menu__item-icon--cms,
+      .aside-menu__item-icon--handbooks {
+        background-image: url('../assets/icons/asideMenu/icon_manual_select_hover.png');
+      }
+      .aside-menu__item-title {
+        color: $font-color-white-primary;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__item-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  &__item-icon {
+    width: 40px;
+    height: 40px;
+    margin: $offset-top-bottom--default;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &__item-icon--accounting,
+  &__item-icon--conference {
+    background-image: url('../assets/icons/asideMenu/icon_org_select.png');
+  }
+  &__item-icon--reports {
+    background-image: url('../assets/icons/asideMenu/icon_reports.png');
+  }
+  &__item-icon--booking,
+  &__item-icon--planing {
+    background-image: url('../assets/icons/asideMenu/icon_notify.png');
+  }
+  &__item-icon--history {
+    background-image: url('../assets/icons/asideMenu/icon_history.png');
+  }
+  &__item-icon--setting {
+    background-image: url('../assets/icons/asideMenu/icon_settings.png');
+  }
+  &__item-icon--cms,
+  &__item-icon--handbooks {
+    background-image: url('../assets/icons/asideMenu/icon_manual_select.png');
+  }
+
+  &__item-title {
+    font-size: 12px;
+    cursor: pointer;
+    color: $font-color__aside-menu;
+  }
+}

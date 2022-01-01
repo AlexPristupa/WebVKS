@@ -1,0 +1,16 @@
+.theme-otkritie {
+  .user-menu {
+
+    &__avatar {
+      .mp-icon--avatar {
+        background-image: url('../assets/theme/otkritie/icons/user.svg');
+      }
+    }
+
+    &__link {
+      &-img {
+        background-image: url('../assets/theme/otkritie/icons/icon_logout.svg');
+      }
+    }
+  }
+}

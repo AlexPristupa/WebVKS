@@ -1,0 +1,21 @@
+.confirm-save-value-property {
+  width: 100%;
+
+  &__text {
+    text-align: start;
+    margin: $offset--mini * 3 0 $offset--mini;
+    word-break: break-word;
+  }
+
+  &__title-table {
+    color: $font-color__modal-title;
+    font-size: $font-xs;
+    font-weight: bold;
+    text-align: start;
+    margin: $offset--mini * 4 0 0;
+  }
+
+  .mp-table {
+    margin-bottom: $offset--mini * 3;
+  }
+}

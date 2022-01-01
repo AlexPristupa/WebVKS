@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\MentolVKS\MentolVKS.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\AgGridVue0\**" />
+    <Compile Remove="Helper\**" />
+    <Content Remove="Controllers\AgGridVue0\**" />
+    <Content Remove="Helper\**" />
+    <EmbeddedResource Remove="Controllers\AgGridVue0\**" />
+    <EmbeddedResource Remove="Helper\**" />
+    <None Remove="Controllers\AgGridVue0\**" />
+    <None Remove="Helper\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="service_linux\install_service.sh">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>    
+    <None Update="service_linux\mentolvks.service">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="service_linux\readme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>   
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\WORK\MENTOL PRO\4266_CU_HOME\log-20200928.txt" Link="log-20200928.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.Proxy" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Literate" Version="3.0.0" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.RollingFileAlternate" Version="2.0.9" />
+    <PackageReference Include="Swashbuckle" Version="5.6.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.Core" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <ProjectReference Include="..\MentolVKS.DataInterface\MentolVKS.DataInterface.csproj" />
+    <ProjectReference Include="..\MentolVKS.LdapAuth\MentolVKS.LdapAuth.csproj" />
+    <ProjectReference Include="..\MentolVKS.Model\MentolVKS.Model.csproj" />
+    <ProjectReference Include="..\MentolVKS.Repository.LinqToDb\MentolVKS.Repository.LinqToDb.csproj" />
+    <ProjectReference Include="..\MentolVKS.Repository\MentolVKS.Repository.csproj" />
+  </ItemGroup>
+</Project>

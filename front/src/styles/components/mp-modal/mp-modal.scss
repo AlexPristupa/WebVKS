@@ -1,0 +1,63 @@
+@import 'mp-modal--booking';
+@import 'mp-modal--edit-booking-periodic';
+@import 'mp-modal---edit-booking-pin-setting';
+@import 'mp-modal--edit-servers-groups';
+
+.mp-modal {
+
+  .el-dialog__header {
+    padding: $offset-top-bottom--default;
+    margin: $offset-right-left--default;
+    border-bottom: $border__modal;
+    text-align: left;
+  }
+
+  .el-dialog__title {
+    line-height: 24px;
+    color: $font-color__modal-title;
+    font-size: $font-xs;
+    font-weight: bold;
+  }
+
+  .el-dialog__body {
+    max-height: calc(70vh - 118px);
+    overflow: auto;
+    padding: 30px;
+
+    .mp-table-layout {
+      padding: $zero $zero 1rem $zero;
+      &:last-child {
+        padding-bottom: $zero;
+      }
+      &__title {
+        color: $font-color__form-item-label;
+      }
+    }
+  }
+
+  .el-dialog__footer {
+    padding: $offset-top-bottom--default;
+    margin: $offset-right-left--default;
+    border-top: $border__modal;
+  }
+
+  &__text-insertion {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: $font-color-white-primary;
+    background-color: $color__active;
+    margin-bottom: $offset--default;
+    border-radius: $border-radius_4 $border-radius_4 $zero $zero;
+
+    p {
+      margin: $zero;
+    }
+
+    i {
+      font-size: $font-xl;
+      margin: $offset--default $offset--default;
+    }
+  }
+
+}

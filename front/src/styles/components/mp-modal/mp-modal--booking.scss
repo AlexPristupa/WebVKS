@@ -1,0 +1,116 @@
+$height__list: calc(#{$height--default} - 50px);
+$height__list__list: $height__list;
+$height__list--space: 800px;
+$height__list__list--space: calc(#{$height__list--space} - 50px);
+$height__list--space--permanent: 630px;
+$height__list__list--space--permanent: calc(#{$height__list--space--permanent} - 50px);
+$height__list--participants: 500px;
+$height__list__list--participants: calc(#{$height__list--participants} - 50px);
+
+.mp-modal--booking {
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: $height__list;
+    height: $height__list;
+    padding: $offset--mini;
+    border: $border $border-color__tabs;
+    border-radius: $border-radius_4;
+
+    &__search {
+      width: $width--default;
+      margin-bottom: $offset--default;
+    }
+
+    &__list {
+      overflow-x: hidden;
+      width: $width--default;
+      height: $height__list__list;
+      max-height: $height__list__list;
+    }
+
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      white-space: normal;
+      width: $width--default;
+      padding-left: $offset--mini;
+      line-height: $height__input--default;
+      text-align: left;
+
+      .el-checkbox__label {
+        display: flex;
+        align-items: center;
+        width: 85%;
+        .mp-button.mp-button--cell.mp-button--edit {
+          margin-left: $offset--medium;
+        }
+      }
+
+      .el-checkbox__input {
+        display: flex;
+        align-items: center;
+        height: $height__input--default;
+      }
+      &.without-checkbox {
+        &.is-checked {
+          background-color: $color--active;
+          .el-checkbox__label {
+            color: $font-color-white-primary;
+          }
+        }
+        .el-checkbox__input {
+          display: none;
+        }
+      }
+    }
+
+    &.spaces {
+      max-height: $height__list--space;
+      height: $height__list--space;
+      .mp-modal--booking__list__list {
+        max-height: $height__list__list--space;
+        height: $height__list__list--space;
+      }
+
+      &.permanent {
+        max-height: $height__list--space--permanent;
+        height: $height__list--space--permanent;
+        .mp-modal--booking__list__list {
+          max-height: $height__list__list--space--permanent;
+          height: $height__list__list--space--permanent;
+        }
+      }
+    }
+
+    &.participants {
+      max-height: $height__list--participants;
+      height: $height__list--participants;
+
+      .mp-modal--booking__list__list {
+        max-height: $height__list__list--participants;
+        height: $height__list__list--participants;
+      }
+    }
+  }
+
+  .el-form-item__element-with-button {
+    width: $width--default;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .duration-double-select {
+    display: flex;
+    &__item {
+      width: 45%;
+      &:first-child {
+        margin-right: 10%;
+      }
+    }
+  }
+}

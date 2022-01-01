@@ -1,0 +1,9 @@
+.el-dropdown-menu {
+  .el-dropdown-menu__item {
+    color: $font-color-primary;
+    &:focus, &:not(.is-disabled):hover {
+      background-color: $color--active;
+      color: $font-color-white-primary;
+    }
+  }
+}

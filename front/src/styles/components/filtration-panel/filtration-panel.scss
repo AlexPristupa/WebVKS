@@ -1,0 +1,27 @@
+.filtration-panel {
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+
+  .el-dialog__body {
+    max-height: calc(70vh - 118px);
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+
+    .mp-select {
+      width: 25rem;
+    }
+    .el-select {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    max-height: calc(70vh - 118px - 60px - 47px);
+    height: calc(70vh - 118px - 60px - 47px);
+    overflow-y: auto;
+  }
+}

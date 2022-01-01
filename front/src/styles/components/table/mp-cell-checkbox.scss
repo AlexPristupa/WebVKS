@@ -1,0 +1,11 @@
+.mp-table {
+  .mp-cell__checkbox {
+    & .el-checkbox:hover, .el-checkbox.is-checked:hover {
+      background-color: transparent;
+    }
+    & .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+      border-color: $font-color-white-primary;
+    }
+  }
+}

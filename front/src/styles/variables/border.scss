@@ -1,0 +1,23 @@
+$border-radius_2: 2px;
+$border-radius_3: 3px;
+$border-radius_4: 4px;
+
+$border: 1px solid;
+
+$border__page-header: $border $border-color__page-header;
+$border__form-header: $border $font-color-normal;
+$border__form-login: $border $font-color-white-primary;
+$border__form-login-input: $border $font-color-white-primary;
+
+$border-button: $border $font-color-low;
+$border-button--hover: $border $font-color-normal;
+
+$border-button__primary: $border $background-color__button-primary;
+$border-button__primary--hover: $border $background-color__button-primary;
+
+$border-button__danger: $border $background-color__button-danger;
+$border-button__danger--hover: $border $background-color__button-danger;
+
+$border__modal: $border $border-color__modal;
+
+$border-table: $border $font-color-low;

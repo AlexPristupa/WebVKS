@@ -1,0 +1,85 @@
+@import "variables";
+
+.column-filter__date {
+  width: $width__filter--date;
+
+  .filter-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $width--default;
+
+    &:first-child {
+      margin-bottom: $offset--default;
+    }
+
+    &--operand {
+      width: $width__filter-select--operand;
+    }
+
+    &--date {
+      width: $width__filter-select--date;
+    }
+
+    &--time {
+      width: $width__filter-select--time;
+    }
+
+    &--clear {
+      width: $width__filter-select--clear;
+      height: $height__filter-select--clear;
+      background-image: url('../assets/icons/clear.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .mx-datepicker {
+      position: relative;
+      width: auto;
+
+      table tr:nth-child(even) td {
+        background: #f4f8fb;
+      }
+
+      .mx-calendar-header .mx-btn:hover {
+        color: $color__active;
+      }
+
+      .mx-calendar-content .cell.active {
+        background-color: $color__active;
+        color: $font-color-white-primary;
+      }
+
+      .mx-table-date .today {
+        color: $color__active;
+      }
+
+      .mx-time {
+        width: $width__datepicker--time;
+
+        .mx-time-column .mx-time-item.active {
+          color: $color__active;
+        }
+      }
+
+      .mx-input {
+        font-family: $font;
+        font-size: $font-xs;
+        padding: $padding__datepicker__input;
+        height: $height__input--default;
+
+        &:hover {
+          border-color: $color__active;
+        }
+
+        &:focus {
+          border-color: $color__active;
+        }
+      }
+    }
+  }
+}
+
+.mx-datepicker-popup {
+  z-index: 10000;
+}

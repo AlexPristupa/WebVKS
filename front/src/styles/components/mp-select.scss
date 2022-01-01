@@ -1,0 +1,16 @@
+.mp-select {
+  width: 100%;
+  height: 100%;
+  &__dropdown {
+    min-height: 50px;
+    &__empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 100%;
+      color: #999;
+      font-size: $font-sm
+    }
+  }
+}

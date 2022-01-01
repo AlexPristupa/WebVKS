@@ -1,0 +1,37 @@
+.layout_form_columns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .layout_form_column {
+    &__title {
+      p {
+        margin: $zero;
+        font-weight: bold;
+        font-size: $font-md;
+        text-align: left;
+      }
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $zero $zero $offset--default;
+    }
+
+    &.layout_form_column--auto {
+      width: auto;
+    }
+
+    &.layout_form_column--full {
+      width: calc(#{$width--default} - #{$offset--default})
+    }
+
+    &.layout_form_column--half {
+      width: calc(#{$width--default} / 2 - #{$offset--default})
+    }
+
+    &.layout_form_column--oneThird {
+      width: calc(#{$width--default} / 3 - #{$offset--default})
+    }
+  }
+}

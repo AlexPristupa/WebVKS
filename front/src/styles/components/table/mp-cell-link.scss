@@ -1,0 +1,34 @@
+$font-color__list: $background-color__tree-node--focus;
+
+.mp-cell--link__popover {
+  display: flex;
+  flex-width: wrap;
+
+  .content {
+    width: $width--default;
+    &__title {
+      width: $width--default;
+      margin: $zero;
+      font-weight: bold;
+      color: $font-color__modal-title;
+    }
+
+    &__list {
+      margin: $zero;
+      width: $width--default;
+      color: $font-color__list;
+      padding: $zero;
+      text-align: center;
+      list-style-type: none;
+      li {
+        cursor: pointer;
+        padding: 2px 5px;
+        text-align: left;
+        &:hover {
+          background-color: $background-color__table__row--selected;
+          color: $font-color-white-primary;
+        }
+      }
+    }
+  }
+}

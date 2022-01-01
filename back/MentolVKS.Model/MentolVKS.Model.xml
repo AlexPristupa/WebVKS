@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MentolVKS.Model</name>
+    </assembly>
+    <members>
+        <member name="T:MentolVKS.Model.AuthModel">
+            <summary>
+            Авторизация пользователя
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.Bases.EntityBase">
+            <summary>
+            Базовый класс для cущности объектной модели системы.
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.Bases.ModelBase">
+            <summary>
+            Базовый класс для классов объектной модели системы.
+            </summary>
+        </member>
+        <member name="M:MentolVKS.Model.Bases.ModelBase.ToJson">
+            <summary>
+                Возвращает JSON-представление объекта.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MentolVKS.Model.Bases.TableBasedEntityBase">
+            <summary>
+            Базовый класс для таблиц объектной модели системы.
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.Bases.ViewBasedEntityBase">
+            <summary>
+            Базовый класс для представления объектной модели системы.
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.ColumnSettings.ColumnSettings">
+            <summary>
+            Модель настройки колонки таблицы
+            </summary>
+        </member>
+        <member name="F:MentolVKS.Model.ColumnSettings.ColumnSettings._width">
+            <summary>
+            Ширина
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.DataType">
+            <summary>
+            Тип данных
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.Width">
+            <summary>
+            Ширира
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.Template">
+            <summary>
+            Шаблон данных
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.MinWidth">
+            <summary>
+            Минимальная длина
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.Value">
+            <summary>
+            Имя значения
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.Wrap">
+            <summary>
+            Разметка, окружающая заголовок
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.IsVisible">
+            <summary>
+            Отображаемая колонка
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.UserOrder">
+            <summary>
+            Пользовательский порядок колонки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.Order">
+            <summary>
+            Общий порядок колонки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.ColumnName">
+            <summary>
+            Имя поля БД
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.ClassName">
+            <summary>
+            Класс ячейки таблицы
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.Title">
+            <summary>
+            Заголовок колонки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.FilterType">
+            <summary>
+            Тип фильтра
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.ColumnSettings.AlwaysHidden">
+            <summary>
+            Колонка всегда скрыта
+            </summary>
+        </member>
+        <member name="M:MentolVKS.Model.ColumnSettings.ColumnSettings.CompareTo(System.Object)">
+            <summary>
+            Сравнение колонок
+            </summary>
+            <param name="obj">Сравниваемая колонка</param>
+            <returns>Результат сравнения</returns>
+        </member>
+        <member name="T:MentolVKS.Model.ColumnSettings.TableColumnSettings">
+            <summary>
+            Модель настроек колонок таблицы
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.TableName">
+            <summary>
+            Имя таблицы
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.ColumnName">
+            <summary>
+            Имя колонки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.Title">
+            <summary>
+            Заголовок
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.Value">
+            <summary>
+            Значение
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.Wrap">
+            <summary>
+            Обёртка значения
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.Template">
+            <summary>
+            Шаблон значения
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.Order">
+            <summary>
+            Порядковый номер колонки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.MinWidth">
+            <summary>
+            Минимальная ширина
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.ClassName">
+            <summary>
+            Имя класса ячейки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.RoleId">
+            <summary>
+            Идентификатор роли
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.ColumnSettings.TableColumnSettings.UserColumns">
+            <summary>
+            Пользовательские настройки
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.ColumnSettings.UserTableColumns">
+            <summary>
+            Модель пользовательских настроек
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.ConferenceCurrent">
+            <summary>
+            TODO Тут должна быть модель приложения а не БД
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.Enums.SaveColumnResult">
+            <summary>
+            Результат сохранения колонок
+            </summary>
+        </member>
+        <member name="F:MentolVKS.Model.Enums.SaveColumnResult.Success">
+            <summary>
+            Удачное выполнение
+            </summary>
+        </member>
+        <member name="F:MentolVKS.Model.Enums.SaveColumnResult.LastColumn">
+            <summary>
+            Последняя колонка в таблице
+            </summary>
+        </member>
+        <member name="F:MentolVKS.Model.Enums.SaveColumnResult.RequiredColumn">
+            <summary>
+            Обязательная колонка
+            </summary>
+        </member>
+        <member name="F:MentolVKS.Model.Enums.SaveColumnResult.NotFound">
+            <summary>
+            Колонка не найдена
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.Role">
+            <summary>
+            Роли
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings">
+            <summary>
+            Модель настроек колонок таблицы
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.TableName">
+            <summary>
+            Имя таблицы
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.ColumnName">
+            <summary>
+            Имя колонки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.Title">
+            <summary>
+            Заголовок
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.Value">
+            <summary>
+            Значение
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.Wrap">
+            <summary>
+            Обёртка значения
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.Template">
+            <summary>
+            Шаблон значения
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.Order">
+            <summary>
+            Порядковый номер колонки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.MinWidth">
+            <summary>
+            Минимальная ширина
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.ClassName">
+            <summary>
+            Имя класса ячейки
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.RoleId">
+            <summary>
+            Идентификатор роли
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.TableColumnSettings.UserColumns">
+            <summary>
+            Пользовательские настройки
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.TableColumnsGetSettings.UserTableColumns">
+            <summary>
+            Сохранение настроек колонки по определенному пользователю
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.UserTableColumns.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.UserTableColumns.UserId">
+            <summary>
+            Идентификатор пользователя
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.UserTableColumns.TableColumnId">
+            <summary>
+            Идентификатор таблицы TableColumnSettings
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.UserTableColumns.Order">
+            <summary>
+            Порядковый номера в сортировки 
+            </summary>
+        </member>
+        <member name="P:MentolVKS.Model.TableColumnsGetSettings.UserTableColumns.Width">
+            <summary>
+            Сохраняемая ширина колонки
+            </summary>
+        </member>
+        <member name="T:MentolVKS.Model.User">
+            <summary>
+            Пользователи
+            </summary>
+        </member>
+    </members>
+</doc>

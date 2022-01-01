@@ -1,0 +1,58 @@
+.panel-layout {
+  display: flex;
+  height: $height--default;
+
+  &__one {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  &__left {
+    width: 60%;
+    margin-right: 0.6rem;
+    flex-basis: 60%;
+  }
+
+  &__left-report {
+    width: 27%;
+    margin-right: 0.6rem;
+    flex-basis: 27%;
+  }
+
+  &__right {
+    width: 40%;
+    height: $height--default;
+    margin-left: 0.6rem;
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+  }
+
+  &__right-report {
+    width: 73%;
+    margin-left: 0.6rem;
+    display: flex;
+    flex-basis: 73%;
+    flex-direction: column;
+  }
+
+  &__right-top {
+    height: calc(60% - 0.6rem);
+    width: $width--default;
+    margin-bottom: 0.6rem;
+  }
+  &__right-top-report {
+    height: $height--default;
+    width: $width--default;
+  }
+
+  &__right-bottom {
+    height: calc(40% - 0.6rem);
+    width: $width--default;
+    margin-top: 0.6rem;
+  }
+  &__right-bottom-report {
+    height: 0px;
+    width: $width--default;
+  }
+}

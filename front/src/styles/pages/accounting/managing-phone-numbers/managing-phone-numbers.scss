@@ -1,0 +1,32 @@
+@import "bind-numbers-modal";
+
+.phone-property__top-panel-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .phone-property__date-picker-all-property {
+    display: flex;
+    align-items: center;
+  }
+
+  .date-picker__label {
+    font-size: 0.8rem;
+    padding-right: 0.5rem;
+    color: $font-color-normal;
+  }
+
+  .phone-property__actual-property-profile {
+    padding: 0 1rem;
+    color: $color__active;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $height__table-layout-row;
+  }
+
+  .el-date-editor.el-input, .el-date-editor.el-input__inner {
+    width: 130px;
+  }
+}
+

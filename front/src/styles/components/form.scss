@@ -1,0 +1,106 @@
+$font-size__el-form-item__error: 10px;
+
+.mp-form {
+  &.el-card {
+    color: $font-color-normal;
+    background-color: $background-color__opacity;
+    border: none;
+    margin-bottom: 2.4rem;
+  }
+
+  .el-card__header {
+    border-bottom: $border__form-header;
+    padding: 0;
+    margin: 0 1rem;
+  }
+
+  &__title {
+    text-align: left;
+    margin: 0.8rem 0 0.4rem;
+    padding: 0 1.4rem;
+  }
+
+  .el-card__body {
+    padding: 1rem 1rem 2rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.6rem;
+  }
+
+  .el-select {
+    width: $width--default;
+  }
+
+  .el-form-item {
+    &__label {
+      text-align: left;
+      color: $font-color__form-item-label;
+      font-size: $font-xs;
+      height: $height__input--large;
+      line-height: $height__input--large;
+    }
+
+    &__error {
+      word-break: keep-all;
+      text-align: left;
+      font-size: $font-size__el-form-item__error;
+    }
+
+    &--with-text {
+      margin-bottom: 0;
+
+      &__text {
+        width: $width--default;
+        text-align: left;
+        margin: $offset--small $zero $zero $zero;
+        color: $font-color__form-item-label;
+        line-height: $font-size__el-form-item__error;
+        font-size: $font-size__el-form-item__error;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner {
+    width: 100%;
+  }
+
+  .form__item--two-inputs {
+    display: flex;
+
+    span {
+      padding: 0 0.4rem;
+    }
+  }
+
+  .el-form-item__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .el-input-number__text {
+    margin: $zero $zero $zero $offset--mini;
+    text-align: left;
+    color: $font-color__form-item-label;
+    font-size: $font-xs;
+    line-height: $height__input--default;
+  }
+
+    .el-form-item {
+      &__label::before {
+          display: none;
+      }
+      &.is-required:not(.is-no-asterisk) > .el-form-item__label:after {
+        content: "*";
+        font-size: 18px;
+        color: $font-color__mark--required;
+        margin-left: 4px;
+      }
+    }
+}

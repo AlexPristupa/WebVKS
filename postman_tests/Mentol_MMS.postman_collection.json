@@ -1,0 +1,2394 @@
+{
+	"info": {
+		"_postman_id": "1d5643cd-d8ff-4a09-961c-8544343126f5",
+		"name": "Mentol_MMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"    var token1 = jsonData.data.accessToken;\r",
+									"\r",
+									"pm.environment.set(\"Token\", token1);\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/Login",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConnectionType",
+			"item": [
+				{
+					"name": "ConnectionType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"result 0\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"message null\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Автоподключение\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 1, name: 'Автоподключение' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Ручное подключение\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({id: 2, name: 'Ручное подключение'});\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/ConnectionType?limit=300",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ConnectionType"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConnectionType Автоподключение",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Автоподключение\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Автоподключение\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Автоподключение\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 1, name: 'Автоподключение' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/ConnectionType?limit=300&search=авто",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ConnectionType"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "авто"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConnectionType Ручное подключение",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"result 0\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"message null\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Ручное подключение\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({id: 2, name: 'Ручное подключение'});\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/ConnectionType?limit=300&search=руч",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ConnectionType"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "руч"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConnectionType fludd",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"result 0\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"message null\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Ручное подключение\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql([]);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/ConnectionType?limit=300&search=fludd fjgfjgf",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ConnectionType"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "fludd fjgfjgf"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ServersGroups",
+			"item": [
+				{
+					"name": "ServersGroups",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 1, name: 'Лаба' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 2, name: 'Москва' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[2]).to.eql({ id: 3, name: 'Регион' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/ServersGroups?limit=300&search=",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ServersGroups"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ServersGroups_search_laba",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 1, name: 'Лаба' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/ServersGroups?limit=300&search=лаб",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ServersGroups"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "лаб"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Space",
+			"item": [
+				{
+					"name": "SpaceRepository GET",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space?limit=300&search=",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SpaceRepository POST",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"/*\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"*/\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serversgroupsid\": 1,\r\n    \"name\": \"name1\",\r\n    \"uri\": \"uri1\",\r\n    \"tagcdr\": \"tagcdr1\",\r\n    \"guid\": \"guid1\",\r\n    \"password\": \"password1\",\r\n    \"urialt\": \"urialt1\",\r\n    \"passwordguest\": \"passwordguest1\",\r\n    \"urivideo\": \"urivideo1\",\r\n    \"isguestaccessible\": true,\r\n    \"isavailableforbooking\": true,\r\n    \"callid\": \"callid1\",\r\n    \"spacegroupsid\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SpaceRepository PUT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space?limit=300&search=",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SpaceRepository DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space?limit=300&search=",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SpaceRepository",
+			"item": [
+				{
+					"name": "SpaceRepository",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space?limit=300&search=",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SpaceRepository_search_472",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space?limit=300&search=",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SpaceRepository_search_cli",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space?limit=300&search=цкенегаонлпдрл",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "цкенегаонлпдрл"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SpaceRepository_search_fludd",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.eql([]);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Space?limit=300&search=hl;kjgljhfkhgdjfshdags",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Space"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "hl;kjgljhfkhgdjfshdags"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ColumnFilter",
+			"item": [
+				{
+					"name": "Vks_ServersGroup",
+					"item": [
+						{
+							"name": "Vks_ServersGroup1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_ServersGroup\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vks_ServersGroup2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_ServersGroup\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vks_ServersGroup3",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_ServersGroup\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vks_VksServers",
+					"item": [
+						{
+							"name": "Vks_VksServers1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_VksServers\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vks_VksServers2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"msk\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_VksServers\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vks_VksServers3",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"10\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_VksServers\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vks_VksUserProfiles",
+					"item": [
+						{
+							"name": "Vks_VksUserProfiles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_VksUserProfiles\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Vks_VksUserProfiles2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"limit\": 300,\r\n  \"page\": 1,\r\n  \"tableSearchBy\": \"аба\",\r\n  \"orderBy\": \"asc\",\r\n  \"sortField\": \"id\",\r\n  \"tableName\": \"Vks_VksUserProfiles\",\r\n  \"dateStart\": null,\r\n  \"dateFinish\": null,\r\n  \"chkCurrentPageExport\": true,\r\n  \"filters\": [\r\n  ],\r\n  \"extensionFilters\": [\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/ColumnFilter",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"ColumnFilter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ColumnFilter/EntityList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/ColumnFilter/EntityList",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"ColumnFilter",
+								"EntityList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNameFieldsAgGridVue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/AgGridVue/GetNameFieldsAgGridVue?TableName=Vks_VksServers",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"AgGridVue",
+								"GetNameFieldsAgGridVue"
+							],
+							"query": [
+								{
+									"key": "TableName",
+									"value": "Vks_VksServers"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNameFieldsAgGridVue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/AgGridVue/GetNameFieldsAgGridVue?TableName=Vks_ServersGroup",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"AgGridVue",
+								"GetNameFieldsAgGridVue"
+							],
+							"query": [
+								{
+									"key": "TableName",
+									"value": "Vks_ServersGroup"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "SheduleCheck",
+					"item": []
+				},
+				{
+					"name": "SheduleText",
+					"item": [
+						{
+							"name": "Schedule 1hour",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.result).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(null);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nameSchedule\": \"conference\",\r\n  \"schedule\": \"1hour\",\r\n  \"dateStart\": \"2021-12-22T08:20:56.212Z\",\r\n  \"timeZone\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/Schedule/SheduleText",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"Schedule",
+										"SheduleText"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Schedule 2day",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.result).to.eql(0);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(null);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Есть строка Лаба\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nameSchedule\": \"conference\",\r\n  \"schedule\": \"2day\",\r\n  \"dateStart\": \"2021-12-22T08:20:56.212Z\",\r\n  \"timeZone\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/Schedule/SheduleText",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"Schedule",
+										"SheduleText"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Schedule 28minute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameschedule\": \"conference\",\r\n    \"schedule\": \"days:Tuesday\",\r\n    \"datestart\": \"2021-09-16 10:00:00.000\",\r\n    \"timezone\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/Schedule/SheduleText",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Schedule",
+								"SheduleText"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Schedule days:1,3,5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nameSchedule\": \"pin\",\r\n  \"schedule\": \"days:1,3,5\",\r\n  \"dateStart\": \"2021-12-22T08:20:56.212Z\",\r\n  \"timeZone\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/Schedule/SheduleText",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Schedule",
+								"SheduleText"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Schedule -1Monday",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.result).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[0]).to.eql({ id: 22, name: 'Клиентский отдел 263366 (263366)' });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Есть строка Лаба\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data[1]).to.eql({ id: 20, name: 'Клиентский отдел 472643 (472643)' });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nameSchedule\": \"pin\",\r\n  \"schedule\": \"days:-1Monday\",\r\n  \"dateStart\": \"2021-12-22T08:20:56.212Z\",\r\n  \"timeZone\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/Schedule/SheduleText",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Schedule",
+								"SheduleText"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "19670",
+					"item": [
+						{
+							"name": "19670",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"    var id_booking = jsonData.data.id;\r",
+											"\r",
+											"pm.environment.set(\"id_booking\", id_booking);\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\",\r\n  \"location\": \"string\",\r\n  \"ownerId\": null,\r\n  \"dateStart\": \"2021-09-29T12:01:21.673Z\",\r\n  \"timezone\": 0,\r\n  \"duration\": 0,\r\n  \"isUsePin\": true,\r\n  \"schedule\": \"string\",\r\n  \"spaceId\": 34,\r\n  \"connectionTypeId\": null,\r\n  \"attemptScount\": 0,\r\n  \"delay\": 0,\r\n  \"isSendNotification\": true,\r\n  \"isSyncToExchange\": true,\r\n  \"openConferenceBefore\": 0,\r\n  \"isNeverUsePin\": true,\r\n  \"dateEnd\": \"2021-09-29T12:01:21.673Z\",\r\n  \"repeatCount\": 0,\r\n  \"pinPoliticsId\": null,\r\n  \"pinSchedule\": \"string\",\r\n  \"pinDateStart\": \"2021-09-29T12:01:21.673Z\",\r\n  \"linkBookingToParticipant\": [\r\n    3,2,1\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/Booking/",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"Booking",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "19670",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": {{id_booking}},\r\n  \"name\": \"234\",\r\n  \"description\": \"st2346ring\",\r\n  \"location\": \"23532\",\r\n  \"ownerId\": null,\r\n  \"dateStart\": \"2021-09-29T12:01:21.673Z\",\r\n  \"timezone\": 0,\r\n  \"duration\": 0,\r\n  \"isUsePin\": true,\r\n  \"schedule\": \"string\",\r\n  \"spaceId\": null,\r\n  \"connectionTypeId\": null,\r\n  \"attemptScount\": 0,\r\n  \"delay\": 0,\r\n  \"isSendNotification\": true,\r\n  \"isSyncToExchange\": true,\r\n  \"openConferenceBefore\": 0,\r\n  \"isNeverUsePin\": true,\r\n  \"dateEnd\": \"2021-09-29T12:01:21.673Z\",\r\n  \"repeatCount\": 0,\r\n  \"pinPoliticsId\": null,\r\n  \"pinSchedule\": \"string\",\r\n  \"pinDateStart\": \"2021-09-29T12:01:21.673Z\",\r\n  \"linkBookingToParticipant\": [\r\n    3\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/Booking/",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"Booking",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "19670",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 454148,\r\n    \"name\": \"name123123\",\r\n    \"description\": \"desc123\",\r\n    \"location\": \"loc123\",\r\n    \"ownerid\": 3,\r\n    \"datestart\": \"2021-10-08 10:53:37.643\",\r\n    \"timezone\": 222,\r\n    \"duration\": 333,\r\n    \"isusepin\": 1,\r\n    \"schedule\": \"sched123\",\r\n    \"spaceid\": 144,\r\n    \"connectiontypeid\": 2,\r\n    \"attemptscount\": 543,\r\n    \"delay\": 345,\r\n    \"issendnotification\": 1,\r\n    \"issynctoexchange\": 1,\r\n    \"openconferencebefore\": 745,\r\n    \"isneverusepin\": 1,\r\n    \"dateend\": \"2025-10-08 10:53:37.643\",\r\n    \"repeatcount\": 845,\r\n    \"pinpoliticsid\": 2,\r\n    \"pinschedule\": \"sd234geg\",\r\n    \"pindatestart\": \"2020-10-08 10:53:37.643\", \r\n    \"linkBookingToParticipant\":[\r\n    {\r\n     \"vksparticipantid\": 3\r\n     }\r\n ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}{{port}}/api/Booking/{{id_booking}}",
+									"host": [
+										"{{host}}{{port}}"
+									],
+									"path": [
+										"api",
+										"Booking",
+										"{{id_booking}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Booking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"str234ing\",\r\n  \"description\": \"stri234ng\",\r\n  \"location\": \"str234ing\",\r\n  \"ownerId\": 1,\r\n  \"dateStart\": \"2025-09-29T12:01:21.673Z\",\r\n  \"timezone\": 1,\r\n  \"duration\": 2,\r\n  \"isUsePin\": true,\r\n  \"schedule\": \"232\",\r\n  \"spaceId\": 12,\r\n  \"connectionTypeId\": 1,\r\n  \"attemptScount\": 0,\r\n  \"delay\": 0,\r\n  \"isSendNotification\": true,\r\n  \"isSyncToExchange\": true,\r\n  \"openConferenceBefore\": 0,\r\n  \"isNeverUsePin\": true,\r\n  \"dateEnd\": \"2026-09-29T12:01:21.673Z\",\r\n  \"repeatCount\": 0,\r\n  \"pinPoliticsId\": null,\r\n  \"pinSchedule\": \"235\",\r\n  \"pinDateStart\": \"2021-09-29T12:01:21.673Z\",\r\n  \"linkBookingToParticipant\": [\r\n    2,3\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/Booking/",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"454158\",\r\n  \"name\": \"str234ing\",\r\n  \"description\": \"stri234ng\",\r\n  \"location\": \"str234ing\",\r\n  \"ownerId\": 1,\r\n  \"dateStart\": \"2025-09-29T12:01:21.673Z\",\r\n  \"timezone\": 1,\r\n  \"duration\": 2,\r\n  \"isUsePin\": true,\r\n  \"schedule\": \"232\",\r\n  \"spaceId\": 12,\r\n  \"connectionTypeId\": 1,\r\n  \"attemptScount\": 0,\r\n  \"delay\": 0,\r\n  \"isSendNotification\": true,\r\n  \"isSyncToExchange\": true,\r\n  \"openConferenceBefore\": 0,\r\n  \"isNeverUsePin\": true,\r\n  \"dateEnd\": \"2026-09-29T12:01:21.673Z\",\r\n  \"repeatCount\": 0,\r\n  \"pinPoliticsId\": null,\r\n  \"pinSchedule\": \"235\",\r\n  \"pinDateStart\": \"2021-09-29T12:01:21.673Z\",\r\n  \"linkBookingToParticipant\": [ 1,2,3\r\n\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/Booking/",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking POST 1 Copy 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Booking/?id=454138",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Booking",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "454138"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking GET 1 Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/Booking/454138",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"Booking",
+								"454138"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VksUser",
+			"item": [
+				{
+					"name": "VksUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/VksUser?limit=300",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"VksUser"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VksUser so",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{port}}/api/VksUser?limit=300&search=so",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"VksUser"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "300"
+								},
+								{
+									"key": "search",
+									"value": "so"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PinPolitics",
+			"item": [
+				{
+					"name": "PinPolitics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"value\", \r\n    \"privatename\": \"value\" \r\n  },\r\n  \"result\": 0,\r\n  \"message\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{port}}/api/PinPolitics",
+							"host": [
+								"{{host}}{{port}}"
+							],
+							"path": [
+								"api",
+								"PinPolitics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bookingid",
+			"value": ""
+		},
+		{
+			"key": "id_booking",
+			"value": ""
+		}
+	]
+}

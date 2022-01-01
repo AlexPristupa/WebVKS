@@ -1,0 +1,81 @@
+// Wrapper column filter
+.column-filter {
+  width: auto;
+
+  .mp-search {
+    padding: $zero;
+    &.el-input .el-input__inner {
+      width: $width--default;
+      height: $height__input--default;
+      line-height: $height__input--default;
+    }
+  }
+
+  &__header {
+    font-weight: bolder;
+    padding-bottom: 0.6rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0.8rem;
+    .mp-button__icon {
+      display: none;
+    }
+  }
+
+  .el-input--small {
+    height: $height__input--default;
+    line-height: $height__input--default;
+  }
+
+  .el-input--small .el-input__icon {
+    line-height: $height__input--default;
+  }
+
+  .el-select .el-input.is-focus .el-input__inner {
+    border-color: $font-color--active;
+  }
+
+  .el-input--small .el-input__inner {
+    height: $height__input--default;
+    line-height: $height__input--default;
+
+    &:focus {
+      border-color: $font-color--active;
+    }
+  }
+
+  .el-button {
+    padding: 9px 15px;
+  }
+}
+
+.el-select-dropdown .el-select-dropdown__item {
+  height: $height__input--default;
+  line-height: $height__input--default;
+}
+
+// String column filter
+.column-filter-string {
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 0.1rem 0;
+  }
+
+  &__operand {
+    margin-right: 0.5rem;
+    height: $height__input--default;
+  }
+
+  &__value {
+    margin-right: 0.5rem;
+    height: $height__input--default;
+  }
+
+  &__action {
+  }
+}

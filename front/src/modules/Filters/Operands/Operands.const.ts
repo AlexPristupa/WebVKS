@@ -1,0 +1,30 @@
+export enum operandValue {
+  more = '>',
+  smaller = '<',
+  moreOrEqual = '>=',
+  smallerOrEqual = '<=',
+  equal = '=',
+  notEqual = '!=',
+  includesExactly = '~',
+  notIncludesExactly = '!~',
+  includesLeft = '~*',
+  includesRight = '*~',
+  includes = '*~*',
+  notIncludes = '!*~*',
+}
+
+export enum operandName {
+  more = 'more',
+  smaller = 'smaller',
+  moreOrEqual = 'moreOrEqual',
+  smallerOrEqual = 'smallerOrEqual',
+  equal = 'equal',
+  notEqual = 'notEqual',
+  includesExactly = 'includesExactly',
+  notIncludesExactly = 'notIncludesExactly',
+  includesLeft = 'includesLeft',
+  includesRight = 'includesRight',
+  includes = 'includes',
+  notIncludes = 'notIncludes',
+  notSpecified = 'notSpecified',
+}

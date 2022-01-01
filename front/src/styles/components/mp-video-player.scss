@@ -1,0 +1,46 @@
+.mp-dialog__video-player {
+  .el-dialog {
+    &__header {
+      display: none;
+    }
+    &__body {
+      height: 70vh;
+      margin: $zero;
+      padding: $zero;
+    }
+  }
+
+  .mp-video-player {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: $width--default;
+    height: $height--default;
+    .video-player {
+      width: $width--default;
+      height: $height--default;
+    }
+    .video-js {
+      width: $width--default;
+      height: $height--default;
+      .vjs-tech {
+        position: relative;
+      }
+    }
+    .el-icon-close {
+      cursor: pointer;
+      position: absolute;
+      font-size: $font-sm;
+      font-weight: 600;
+      line-height: $font-sm;
+      z-index: 1;
+      top: $offset--medium;
+      right: $offset--medium;
+      color: $font-color-white-primary;
+      padding: 2px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}

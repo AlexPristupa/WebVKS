@@ -1,0 +1,123 @@
+.filtration-panel-filter-wrapper__body .column-filter--select {
+  width: $full-width;
+  max-height: $fp-filter-select__height;
+
+  .el-select__tags {
+    max-height: $fp-filter-select__height - $fp-filter-select__back-indent;
+    overflow-y: auto;
+  }
+
+  .el-input--suffix {
+    max-height: $fp-filter-select__height;
+  }
+
+  &__search-collapse {
+    display: flex;
+    padding: $offset--small $offset--default * 2 $offset--small $offset--default *
+      2;
+
+    .mp-button {
+      margin: 0 0 $fp-filter-select__back-indent $offset--default;
+    }
+  }
+
+  .filter-select__drop-down {
+    width: $full-width;
+  }
+
+  .mp-search {
+    width: $full-width;
+    padding-bottom: $fp-filter-select__back-indent;
+
+    input {
+      width: $full-width;
+    }
+  }
+
+  .el-select-dropdown,
+  .el-select-dropdown__wrap,
+  .el-scrollbar {
+    height: $filter-select__dropdown-height;
+    min-height: $filter-select__dropdown-height;
+  }
+
+  .el-scrollbar__wrap {
+    overflow: hidden;
+  }
+
+  .el-select-dropdown__item {
+    padding: 0;
+  }
+  .el-select-dropdown__item:hover {
+    .el-checkbox__label {
+      background-color: $color__active;
+      color: $font-color-white-full;
+    }
+    .el-checkbox__inner {
+      border-color: $font-color-white-full;
+    }
+  }
+
+  .el-checkbox__label {
+    width: $full-width;
+    height: $full-height;
+  }
+
+  .column-filter--select__options-container {
+    min-height: $fp-filter-select__options-height;
+    max-height: $fp-filter-select__options-height;
+    padding: 0 $offset--default;
+  }
+
+  .el-checkbox {
+    width: calc(#{$full-width} - 25px);
+    height: $full-width;
+  }
+
+  .el-select-dropdown.is-multiple .el-select-dropdown__item.selected::after {
+    content: none;
+  }
+
+  .column-filter--select__option {
+    display: flex;
+    flex-direction: column;
+    width: calc(#{$full-width} - 40px);
+  }
+
+  .column-filter--select__option--not-match {
+    width: $full-width;
+
+    span {
+      text-align: center;
+      color: $font-color-normal;
+      font-size: $font-sm;
+    }
+  }
+
+  .el-checkbox {
+    padding: 0;
+  }
+
+  .el-checkbox__input {
+    line-height: $height__input--default;
+    height: $height__input--default;
+    padding-left: $offset--default;
+  }
+
+  .el-checkbox__label {
+    display: flex;
+    align-items: center;
+  }
+  .el-select-dropdown__item.selected.hover {
+    background-color: $color__active;
+
+    .el-checkbox__label {
+      color: $font-color-white-full;
+    }
+
+    .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+      border: 1px solid $font-color-white-full;
+    }
+  }
+}

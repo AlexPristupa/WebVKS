@@ -1,0 +1,28 @@
+@mixin tooltipBlock {
+  box-sizing: border-box;
+  color: $font-color-primary;
+  font-size: $font-xxxs;
+  line-height: $height__input-icon--default;
+  height: $height__input-icon--default;
+  padding: $zero $offset--mini;
+  background-color: $font-color-white-primary;
+  border: $border $font-color-primary;
+  border-radius: $zero;
+}
+
+.custom-tooltip {
+  position: absolute;
+  z-index: 10000;
+  width: auto;
+  height: fit-content;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 1s;
+  &.ag-tooltip-hiding {
+    opacity: 0;
+  }
+}
+
+.custom-tooltip, .button__custom-tooltip.el-tooltip__popper {
+  @include tooltipBlock;
+}

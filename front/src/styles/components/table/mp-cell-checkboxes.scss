@@ -1,0 +1,44 @@
+.mp-table {
+  .ag-row-selected .mp-cell__checkboxes .el-checkbox {
+    .el-checkbox__label {
+      color: $font-color-white-primary;
+    }
+    &:hover, &.is-checked:hover {
+      .el-checkbox__label {
+        color: $font-color-white-primary;
+      }
+    }
+  }
+  .mp-cell__checkboxes {
+    width: $width--default;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    .el-checkbox {
+      display: flex;
+      align-items: center;
+      .el-checkbox__label {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: $font-xxs;
+        color: $font-color-primary;
+      }
+    }
+    & .el-checkbox:hover, .el-checkbox.is-checked:hover {
+      background-color: transparent;
+      .el-checkbox__label {
+        color: $color__active;
+      }
+    }
+    & .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+      border-color: $font-color-white-primary;
+    }
+
+    &__checkbox {
+      box-sizing: border-box;
+      width: calc(#{$width--default}/3);
+    }
+  }
+}

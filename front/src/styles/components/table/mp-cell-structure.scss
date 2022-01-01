@@ -1,0 +1,45 @@
+.mp-table.ag-theme-balham .ag-row-selected {
+  .mp-cell-structure__arrow {
+    .mp-cell-structure__arrow-body {
+      background-image: url('../assets/icons/arrow--white.svg');
+    }
+    &--open .mp-cell-structure__arrow-body {
+      background-image: url('../assets/icons/arrow-down--white.svg');
+    }
+  }
+}
+.mp-cell-structure {
+  display: flex;
+
+  &__arrow {
+    width: 26px;
+    height: 26px;
+    display: flex;
+
+    .mp-cell-structure__arrow-body {
+      width: 26px;
+      height: 26px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../assets/icons/arrow.svg');
+    }
+
+    &--open .mp-cell-structure__arrow-body {
+      background-image: url('../assets/icons/arrow-down.svg');
+    }
+  }
+
+  &__title {
+
+  }
+}
+
+.ag-theme-balham .ag-row.node__is-found {
+  background: $background-color__table-row--is-found;
+}
+
+.ag-theme-balham .ag-row.node__is-found{
+  &.ag-row-selected, &.ag-row-hover {
+    background: $background-color__table-row--selected-is-found;
+  }
+}

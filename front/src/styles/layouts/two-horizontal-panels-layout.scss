@@ -1,0 +1,69 @@
+$height__two-horizontal-panels-layout__expand-collapse: 45px;
+$background-color__panels-layout__expand-collapse--hover: $background-color__table-row--is-group-title;
+$border-color__panels-layout__expand-collapse--hover: #00000014;
+
+.two-horizontal-panels-layout {
+  display: flex;
+  flex-direction: column;
+  height: $height--default;
+
+  &__top, &__bottom {
+    width: $width--default;
+    overflow: auto;
+    position: relative;
+
+    &--closed {
+      overflow: hidden;
+    }
+  }
+
+  &__top-report {
+    height: $height--default;
+    width: $width--default;
+  }
+
+  &__bottom-report {
+    height: $zero;
+    width: $width--default;
+  }
+
+  &__bottom {
+    .mp-table-layout__title {
+      padding: $zero $zero $offset--large;
+    }
+  }
+
+  .two-horizontal-panels-layout__expand-collapse {
+    cursor: pointer;
+    position: absolute;
+    top: $zero;
+    right: $zero;
+    width: $width--default;
+    height: $height__two-horizontal-panels-layout__expand-collapse;
+
+    &:hover {
+      background-color: $background-color__panels-layout__expand-collapse--hover;
+      border-bottom: $border $border-color__panels-layout__expand-collapse--hover;
+      .icon {
+        animation: $back-and-forth;
+      }
+    }
+
+    .icon {
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: $font-xl;
+      height: $font-xxs;
+      background-image: url('../assets/icons/arrow-down.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &--closed {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

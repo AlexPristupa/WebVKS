@@ -1,0 +1,76 @@
+import { TableName } from '@/modules/table_grid/TableName.const'
+
+export default {
+  [TableName.booking]: {
+    id: '№',
+    name: 'Наименование',
+    description: 'Описание',
+    owner: 'Владелец',
+    spaceName: 'Комната',
+    schedule: 'Периодическая',
+    spaceUri: 'URI',
+    type: 'Тип конференции',
+    currentStatus: 'Текущий статус',
+    nextRun: 'Следующий запуск',
+    counter: 'Счетчик',
+    actions: 'Действия',
+  },
+  [TableName.spaces]: {
+    id: '№',
+    name: 'Наименование',
+    serversGroupsName: 'Группа серверов',
+    uri: 'URI',
+    actions: 'Действия',
+  },
+  [TableName.recordings]: {
+    name: 'Наименование',
+    spaceUri: 'URI',
+    owner: 'Владелец',
+    dateStart: 'Дата начала',
+    dateEnd: 'Дата завершения',
+    duration: 'Длительность',
+    serversGroupsName: 'Группа серверов',
+    actions: 'Действия',
+  },
+  [TableName.recordingsShare]: {
+    user: 'Пользователь',
+    isPlay: 'Просмотр',
+    isDownload: 'Загрузка',
+    dateRecord: 'Дата выдачи прав',
+    actions: 'Действия',
+  },
+  [TableName.exportExcel]: {
+    name: 'Наименование',
+    mainTable: 'Главная таблица',
+  },
+  [TableName.userProfiles]: {
+    id: '№',
+    name: 'Наименование',
+    description: 'Описание',
+    serversGroupsName: 'Группа серверов',
+    actions: 'Действия',
+  },
+  [TableName.editSpaceBooking]: {
+    name: 'Наименование',
+    description: 'Описание',
+    currentStatus: 'Текущий статус',
+    nextRun: 'Следующий запуск',
+  },
+  [TableName.editSpaceParticipants]: {
+    id: '№',
+    vksUser: 'Логин участника',
+    callLegProfileGuid: 'Профиль настроек вызова',
+    rights: 'Права',
+    actions: 'Действия',
+  },
+  [TableName.serversGroups]: {
+    name: 'Наименование',
+    description: 'Описание',
+    actions: 'Действия',
+  },
+  [TableName.servers]: {
+    name: 'Наименование',
+    basicPath: 'Основной путь',
+    actions: 'Действия',
+  },
+}

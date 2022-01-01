@@ -1,0 +1,111 @@
+.layout_form {
+  .el-input--small .el-input__inner {
+    height: $height__input--large;
+    line-height: $height__input--large;
+  }
+
+  .el-dialog {
+    &__headerbtn .el-dialog__close {
+      &:hover {
+        color: $background-color__button-primary;
+      }
+    }
+
+    &__header {
+      display: flex;
+      justify-content: flex-start;
+      padding: $offset-top-bottom--default;
+      margin: $offset-right-left--default;
+      border-bottom: $border $border-color__modal;
+    }
+
+    &__title {
+      line-height: 24px;
+      color: $font-color__modal-title;
+      font-size: $font-xs;
+      font-weight: bold;
+    }
+
+    &__body {
+      padding: 30px;
+    }
+
+    &__footer {
+      padding: $offset-top-bottom--default;
+      margin: $offset-right-left--default;
+      border-top: $border $border-color__modal;
+    }
+
+    & .vue-progress-path .progress {
+      stroke: $background-color__button-primary;
+    }
+  }
+
+  .el-form {
+    &-item {
+      margin-bottom: $form-offset--bottom--default;
+
+      &:last-child {
+        margin-bottom: $zero;
+      }
+
+      &__content {
+        height: $height__input--large;
+      }
+
+      &__label {
+        width: $width--default;
+        line-height: $height__input--large;
+        height: $height__input--large;
+        word-break: break-word;
+        text-align: left;
+        padding: 0;
+        color: #7F8FA4;
+        font-size: $font-xs;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &.is-required:not(.is-no-asterisk) > .el-form-item__label:after {
+        content: "*";
+        font-size: 18px;
+        color: $font-color__mark--required;
+        margin-left: 4px;
+      }
+    }
+
+    .two-inputs-item {
+      .el-form-item__label {
+        &:after {
+          content: "*";
+          font-size: 18px;
+          color: $font-color__mark--required;
+          margin-left: 4px;
+        }
+      }
+
+      .el-form-item__content {
+        justify-content: space-between;
+
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+        }
+
+        .el-form-item {
+          width: 49%;
+
+          .el-input {
+            width: $width--default;
+            line-height: $height__input--large;
+          }
+        }
+      }
+    }
+  }
+}
